@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const GetStartedSection = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isInView, setIsInView] = useState(false);
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -41,7 +42,7 @@ const GetStartedSection = () => {
 
   // Auto-progress through features
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || !isInView) return;
 
     intervalRef.current = setInterval(() => {
       setSelectedFeature((prev) => (prev + 1) % features.length);
@@ -51,11 +52,11 @@ const GetStartedSection = () => {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [isAutoPlaying, features.length]);
+    }, [isAutoPlaying, isInView, features.length]);
 
   // Update progress bar
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || !isInView) return;
 
     progressIntervalRef.current = setInterval(() => {
       setProgress((prev) => {
@@ -67,7 +68,7 @@ const GetStartedSection = () => {
     return () => {
       if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     };
-  }, [isAutoPlaying, selectedFeature]);
+  }, [isAutoPlaying, isInView, selectedFeature]);
 
   // Clean up on unmount
   useEffect(() => {
@@ -102,7 +103,14 @@ const GetStartedSection = () => {
         </div>
 
 
-        <div className="bg-[#0D0D0D] border border-[#252525] rounded-lg overflow-hidden">
+        <motion.div 
+          className="bg-[#0D0D0D] border border-[#252525] rounded-lg overflow-hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          onViewportEnter={() => setIsInView(true)}
+          onViewportLeave={() => setIsInView(false)}
+          viewport={{ once: false, margin: "-100px" }}
+        >
           <div className="flex flex-col lg:flex-row min-h-[600px]">
             {/* Left side - Feature list */}
             <div className="w-full lg:w-1/2 p-8 lg:p-12">
@@ -295,7 +303,7 @@ const GetStartedSection = () => {
               </AnimatePresence>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
