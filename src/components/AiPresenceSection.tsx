@@ -6,35 +6,6 @@ import { motion } from "framer-motion";
 const AiPresenceSection = () => {
   return <div className="w-full min-h-screen relative py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Header Section */}
-        <div className="text-center mb-20">
-          <motion.h2 
-            className="text-4xl md:text-[44px] font-bold text-white leading-[52px] mb-8 max-w-[520px] mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            Understand Your AI Presence Fully
-          </motion.h2>
-          <motion.p 
-            className="text-[#717179] text-xl font-medium leading-[26px] mb-12 max-w-[500px] mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            The tools designed to give you complete oversight of your brand's performance and perception
-          </motion.p>
-          <div className="flex gap-4 justify-center">
-            <Button variant="default" className="bg-white text-[#0D0D0D] hover:bg-gray-100 px-6 py-2 rounded-lg">
-              Try for free
-            </Button>
-            <Button variant="secondary" className="bg-[#171717] text-white hover:bg-[#252525] px-6 py-2 rounded-lg shadow-sm">
-              Book a demo
-            </Button>
-          </div>
-        </div>
 
         {/* First Content Section - Sentiment Analysis */}
         <div className="border-t border-l border-r border-[#252525] mb-8">
