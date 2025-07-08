@@ -70,7 +70,7 @@ const CtaSection = () => {
           
           {/* Content */}
           <motion.div 
-            className="text-center py-28 px-8 relative z-10"
+            className="text-center py-40 px-8 relative z-10"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
