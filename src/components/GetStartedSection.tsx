@@ -163,7 +163,7 @@ const GetStartedSection = () => {
                       <div className="relative flex-shrink-0">
                         {/* Minimal gradient outline timer */}
                         <svg 
-                          className="absolute inset-0 w-full h-full pointer-events-none transform rotate-45" 
+                          className="absolute inset-0 w-full h-full pointer-events-none" 
                           viewBox="0 0 44 44"
                         >
                           <defs>
