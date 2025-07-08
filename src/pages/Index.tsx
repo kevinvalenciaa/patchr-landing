@@ -14,7 +14,7 @@ import CtaSection from "@/components/CtaSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full" style={{ background: 'var(--gradient-purple)' }}>
+    <div className="min-h-screen bg-[#000000] w-full">
       <Navigation />
       <div className="pt-20">
       <HeroSection />
