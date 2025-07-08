@@ -155,7 +155,7 @@ const GetStartedSection = () => {
                       <div className="relative flex-shrink-0">
                         {/* Minimal gradient outline timer */}
                         <svg 
-                          className="absolute inset-0 w-full h-full transform -rotate-90 pointer-events-none" 
+                          className="absolute inset-0 w-full h-full pointer-events-none" 
                           viewBox="0 0 44 44"
                         >
                           <defs>
@@ -164,25 +164,29 @@ const GetStartedSection = () => {
                               <stop offset="100%" stopColor="#EB894C" />
                             </linearGradient>
                           </defs>
-                          {/* Progress circle - very minimal */}
+                          {/* Progress rounded square outline */}
                           {isSelected && (
-                            <motion.circle
-                              cx="22"
-                              cy="22"
-                              r="20"
+                            <motion.rect
+                              x="2"
+                              y="2"
+                              width="40"
+                              height="40"
+                              rx="8"
+                              ry="8"
                               stroke={`url(#timer-gradient-${index})`}
-                              strokeWidth="1.5"
+                              strokeWidth="2.5"
                               fill="none"
                               strokeLinecap="round"
-                              strokeDasharray={`${2 * Math.PI * 20}`}
-                              initial={{ strokeDashoffset: 2 * Math.PI * 20 }}
+                              strokeDasharray={`${(40 + 40 + 32) * 2}`} // Perimeter of rounded rect
+                              pathLength="1"
+                              initial={{ strokeDashoffset: 1 }}
                               animate={{
                                 strokeDashoffset: isAutoPlaying 
-                                  ? 2 * Math.PI * 20 * (1 - progress / 100)
-                                  : 2 * Math.PI * 20
+                                  ? 1 - (progress / 100)
+                                  : 1
                               }}
                               transition={{ duration: 0.1, ease: "linear" }}
-                              style={{ opacity: 0.8 }}
+                              style={{ opacity: 0.9 }}
                             />
                           )}
                         </svg>
