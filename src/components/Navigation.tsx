@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -15,6 +14,17 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
       <div className={`mx-auto transition-all duration-300 ease-in-out rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 shadow-lg ${
@@ -28,16 +38,32 @@ const Navigation = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-white hover:text-primary transition-colors text-sm font-medium">
+            <a 
+              href="#features" 
+              onClick={(e) => handleSmoothScroll(e, 'features')}
+              className="text-white hover:text-white/80 transition-all duration-300 text-sm font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white/50 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Features
             </a>
-            <a href="#benefits" className="text-white hover:text-primary transition-colors text-sm font-medium">
+            <a 
+              href="#benefits" 
+              onClick={(e) => handleSmoothScroll(e, 'benefits')}
+              className="text-white hover:text-white/80 transition-all duration-300 text-sm font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white/50 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Benefits
             </a>
-            <a href="#onboarding" className="text-white hover:text-primary transition-colors text-sm font-medium">
+            <a 
+              href="#onboarding" 
+              onClick={(e) => handleSmoothScroll(e, 'onboarding')}
+              className="text-white hover:text-white/80 transition-all duration-300 text-sm font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white/50 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Onboarding
             </a>
-            <a href="#pricing" className="text-white hover:text-primary transition-colors text-sm font-medium">
+            <a 
+              href="#pricing" 
+              onClick={(e) => handleSmoothScroll(e, 'pricing')}
+              className="text-white hover:text-white/80 transition-all duration-300 text-sm font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white/50 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Pricing
             </a>
           </div>
