@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Sparkles, Grid3x3, Code, Zap } from "lucide-react";
 import { motion } from "framer-motion";
@@ -65,7 +64,7 @@ const GetStartedSection = () => {
                   return (
                     <motion.div
                       key={index}
-                      className={`flex items-start gap-4 p-4 rounded-lg cursor-pointer transition-all duration-300 ${
+                      className={`flex items-start gap-4 p-4 rounded-lg cursor-pointer transition-all duration-200 ${
                         selectedFeature === index 
                           ? 'bg-[#1A1A1A] border border-[#797BEC]/30' 
                           : 'hover:bg-[#151515]'
@@ -75,15 +74,19 @@ const GetStartedSection = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      <div className={`p-2 rounded-lg flex-shrink-0 ${
-                        selectedFeature === index ? 'bg-[#797BEC]' : 'bg-[#252525]'
-                      }`}>
+                      <motion.div 
+                        className={`p-2 rounded-lg flex-shrink-0 transition-colors duration-200 ${
+                          selectedFeature === index ? 'bg-[#797BEC]' : 'bg-[#252525]'
+                        }`}
+                      >
                         <IconComponent 
                           size={20} 
                           className={selectedFeature === index ? 'text-white' : 'text-[#717179]'} 
                         />
-                      </div>
+                      </motion.div>
                       <div>
                         <h3 className={`font-semibold mb-2 ${
                           selectedFeature === index ? 'text-white' : 'text-[#a1a1aa]'
@@ -107,9 +110,10 @@ const GetStartedSection = () => {
               <motion.div
                 className="relative w-full h-full flex items-center justify-center"
                 key={selectedFeature}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               >
                 {/* Background network pattern */}
                 <div className="absolute inset-0 opacity-20">
@@ -147,10 +151,10 @@ const GetStartedSection = () => {
                   />
                   <div className="mt-4 flex justify-center">
                     <div className="flex space-x-1">
-                      {[...Array(5)].map((_, i) => (
+                      {features.map((_, i) => (
                         <div 
                           key={i} 
-                          className={`w-2 h-2 rounded-full ${
+                          className={`w-2 h-2 rounded-full transition-colors duration-200 ${
                             i === selectedFeature ? 'bg-[#797BEC]' : 'bg-[#252525]'
                           }`}
                         />
