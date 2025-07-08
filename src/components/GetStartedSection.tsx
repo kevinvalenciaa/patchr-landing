@@ -196,36 +196,47 @@ const GetStartedSection = () => {
               </div>
             </div>
 
+            {/* Right side - Visual representation */}
             <div className="w-full lg:w-1/2 relative bg-[#0F0F0F] border-l border-[#252525] flex items-center justify-center p-8">
-              <div
-                className="relative w-full h-full flex items-center justify-center"
-                key={selectedFeature}
-              >
-                {/* Feature image */}
-                <div 
-                  className="relative z-10 bg-[#1A1A1A] rounded-xl p-6 border border-[#252525] max-w-[80%]"
+              <AnimatePresence mode="wait">
+                <motion.div
+                  className="relative w-full h-full flex items-center justify-center"
+                  key={selectedFeature}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  <img 
-                    src={features[selectedFeature].image} 
-                    alt={features[selectedFeature].title}
-                    className="w-full h-auto rounded-lg"
-                  />
-                  <div className="mt-4 flex justify-center">
-                    <div className="flex space-x-1">
-                      {features.map((_, i) => (
-                        <motion.div 
-                          key={i} 
-                          className="w-2 h-2 rounded-full"
-                          animate={{
-                            backgroundColor: i === selectedFeature ? '#797BEC' : '#252525'
-                          }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      ))}
+
+                  {/* Feature image */}
+                  <motion.div 
+                    className="relative z-10 bg-[#1A1A1A] rounded-xl p-6 border border-[#252525] max-w-[80%]"
+                    initial={{ scale: 0.9 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  >
+                    <img 
+                      src={features[selectedFeature].image} 
+                      alt={features[selectedFeature].title}
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <div className="mt-4 flex justify-center">
+                      <div className="flex space-x-1">
+                        {features.map((_, i) => (
+                          <motion.div 
+                            key={i} 
+                            className="w-2 h-2 rounded-full"
+                            animate={{
+                              backgroundColor: i === selectedFeature ? '#797BEC' : '#252525'
+                            }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>
