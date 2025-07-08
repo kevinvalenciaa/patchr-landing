@@ -30,14 +30,14 @@ const Navigation = () => {
       <div className={`mx-auto transition-all duration-300 ease-in-out rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 shadow-lg ${
         isScrolled ? 'max-w-4xl' : 'max-w-6xl'
       }`}>
-        <div className="flex items-center justify-between h-16 px-6">
+        <div className="flex items-center h-16 px-6">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <div className="text-white font-bold text-xl">Webfluin</div>
             </Link>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 ml-12">
             <a 
               href="#features" 
               onClick={(e) => handleSmoothScroll(e, 'features')}
@@ -68,7 +68,7 @@ const Navigation = () => {
             </a>
           </div>
           
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 ml-auto">
             <Button className="px-4 py-2.5 text-sm font-semibold leading-5 text-white rounded-xl border border-white/32 font-sans" style={{
               background: 'linear-gradient(180deg, #6445F5 0%, #4128BA 100%)'
             }}>
