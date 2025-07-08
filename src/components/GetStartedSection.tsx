@@ -177,13 +177,13 @@ const GetStartedSection = () => {
                               strokeWidth="2.5"
                               fill="none"
                               strokeLinecap="round"
-                              strokeDasharray={`${(40 + 40 + 32) * 2}`} // Perimeter of rounded rect
+                              strokeDasharray="1"
                               pathLength="1"
-                              initial={{ strokeDashoffset: 1 }}
+                              initial={{ strokeDashoffset: "1" }}
                               animate={{
                                 strokeDashoffset: isAutoPlaying 
-                                  ? 1 - (progress / 100)
-                                  : 1
+                                  ? `${1 - (progress / 100)}`
+                                  : "1"
                               }}
                               transition={{ duration: 0.1, ease: "linear" }}
                               style={{ opacity: 0.9 }}
