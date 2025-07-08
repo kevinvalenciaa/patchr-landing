@@ -9,6 +9,11 @@
   :root {
     --background: 0 0% 0%;
     --foreground: 222.2 84% 4.9%;
+    
+    /* Purple gradient theme */
+    --gradient-purple: linear-gradient(135deg, hsl(253 91% 67%), hsl(262 83% 58%), hsl(272 81% 56%), hsl(280 100% 15%));
+    --purple-primary: 253 91% 67%;
+    --purple-secondary: 262 83% 58%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
