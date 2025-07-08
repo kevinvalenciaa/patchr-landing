@@ -2,8 +2,20 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const CtaSection = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -33,18 +45,28 @@ const CtaSection = () => {
 
       <div className="max-w-screen-xl mx-auto relative z-10">
         <motion.div 
-          className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden relative group"
+          className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          whileHover={{ 
-            scale: 1.01,
-            transition: { duration: 0.3, ease: "easeOut" }
-          }}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
         >
+          {/* Mouse follower spotlight effect */}
+          <div 
+            className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+            style={{
+              background: isHovering 
+                ? `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.1), transparent 70%)`
+                : 'transparent',
+              opacity: isHovering ? 1 : 0
+            }}
+          />
+          
           {/* Glass effect overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-2xl group-hover:from-white/15 group-hover:to-white/8 transition-all duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-2xl"></div>
           
           {/* Content */}
           <motion.div 
