@@ -9,7 +9,7 @@ const GetStartedSection = () => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
-  const STEP_DURATION = 4000; // 4 seconds per step
+  const STEP_DURATION = 8000; // 8 seconds per step
   const PROGRESS_UPDATE_INTERVAL = 50; // Update progress every 50ms
 
   const features = [
@@ -160,8 +160,8 @@ const GetStartedSection = () => {
                         >
                           <defs>
                             <linearGradient id={`timer-gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#797BEC" />
-                              <stop offset="100%" stopColor="#EB894C" />
+                              <stop offset="0%" stopColor="#9333ea" />
+                              <stop offset="100%" stopColor="#c084fc" />
                             </linearGradient>
                           </defs>
                           {/* Progress rounded square outline */}
@@ -191,18 +191,14 @@ const GetStartedSection = () => {
                           )}
                         </svg>
                         {/* Icon in center */}
-                        <motion.div 
-                          className="p-2 rounded-lg flex-shrink-0"
-                          animate={{
-                            backgroundColor: isSelected ? '#797BEC' : '#252525',
-                          }}
-                          transition={{ duration: 0.2, ease: "easeOut" }}
+                        <div 
+                          className="p-2 rounded-lg flex-shrink-0 bg-[#252525]"
                         >
                           <IconComponent 
                             size={20} 
-                            className={isSelected ? 'text-white' : 'text-[#717179]'} 
+                            className="text-[#717179]" 
                           />
-                        </motion.div>
+                        </div>
                       </div>
                       <div>
                         <motion.h3 
