@@ -36,6 +36,10 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    
+    /* Purple gradient for buttons */
+    --purple: 255 71% 61%;
+    --purple-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
 

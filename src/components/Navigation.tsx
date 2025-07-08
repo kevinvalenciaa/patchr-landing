@@ -17,7 +17,7 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
-      <div className={`mx-auto transition-all duration-300 ease-in-out rounded-full bg-black/80 backdrop-blur-md border border-white/10 shadow-lg ${
+      <div className={`mx-auto transition-all duration-300 ease-in-out rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 shadow-lg ${
         isScrolled ? 'max-w-4xl' : 'max-w-6xl'
       }`}>
         <div className="flex items-center justify-between h-16 px-6">
@@ -40,8 +40,8 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center space-x-3">
-            <Button variant="outline" size="sm" className="bg-white/10 border border-white/20 text-white hover:bg-white/20 rounded-lg shadow-sm">
-              Chat with sales
+            <Button size="sm" className="bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 rounded-lg shadow-sm border-0">
+              Get Started
             </Button>
           </div>
         </div>
