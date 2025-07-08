@@ -160,45 +160,7 @@ const GetStartedSection = () => {
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <div className="relative flex-shrink-0">
-                        {/* Minimal gradient outline timer */}
-                        <svg 
-                          className="absolute inset-0 w-full h-full pointer-events-none" 
-                          viewBox="0 0 44 44"
-                        >
-                          <defs>
-                            <linearGradient id={`timer-gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#9333ea" />
-                              <stop offset="100%" stopColor="#c084fc" />
-                            </linearGradient>
-                          </defs>
-                          {/* Progress rounded square outline */}
-                          {isSelected && (
-                            <motion.rect
-                              x="2"
-                              y="2"
-                              width="40"
-                              height="40"
-                              rx="8"
-                              ry="8"
-                              stroke={`url(#timer-gradient-${index})`}
-                              strokeWidth="2.5"
-                              fill="none"
-                              strokeLinecap="round"
-                              strokeDasharray="1"
-                              pathLength="1"
-                              initial={{ strokeDashoffset: "1" }}
-                              animate={{
-                                strokeDashoffset: isAutoPlaying 
-                                  ? `${1 - (progress / 100)}`
-                                  : "1"
-                              }}
-                              transition={{ duration: 0.1, ease: "linear" }}
-                              style={{ opacity: 0.9 }}
-                            />
-                          )}
-                        </svg>
-                        {/* Icon in center */}
+                      <div className="flex-shrink-0">
                         <div 
                           className="p-2 rounded-lg flex-shrink-0 bg-[#252525]"
                         >
@@ -245,32 +207,6 @@ const GetStartedSection = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  {/* Background network pattern */}
-                  <div className="absolute inset-0 opacity-20">
-                    <svg viewBox="0 0 400 300" className="w-full h-full">
-                      <defs>
-                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#797BEC" />
-                          <stop offset="100%" stopColor="#EB894C" />
-                        </linearGradient>
-                      </defs>
-                      {/* Connection lines */}
-                      <path d="M100,150 Q200,100 300,150" stroke="url(#gradient)" strokeWidth="2" fill="none" opacity="0.6"/>
-                      <path d="M100,150 Q200,200 300,150" stroke="url(#gradient)" strokeWidth="2" fill="none" opacity="0.6"/>
-                      <path d="M50,100 L100,150" stroke="url(#gradient)" strokeWidth="2" opacity="0.4"/>
-                      <path d="M300,150 L350,100" stroke="url(#gradient)" strokeWidth="2" opacity="0.4"/>
-                      <path d="M50,200 L100,150" stroke="url(#gradient)" strokeWidth="2" opacity="0.4"/>
-                      <path d="M300,150 L350,200" stroke="url(#gradient)" strokeWidth="2" opacity="0.4"/>
-                      
-                      {/* Nodes */}
-                      <circle cx="100" cy="150" r="8" fill="#797BEC"/>
-                      <circle cx="300" cy="150" r="8" fill="#EB894C"/>
-                      <circle cx="50" cy="100" r="4" fill="#797BEC" opacity="0.7"/>
-                      <circle cx="50" cy="200" r="4" fill="#797BEC" opacity="0.7"/>
-                      <circle cx="350" cy="100" r="4" fill="#EB894C" opacity="0.7"/>
-                      <circle cx="350" cy="200" r="4" fill="#EB894C" opacity="0.7"/>
-                    </svg>
-                  </div>
 
                   {/* Feature image */}
                   <motion.div 
