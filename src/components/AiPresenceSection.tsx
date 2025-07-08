@@ -18,7 +18,7 @@ const AiPresenceSection = () => {
 
         <div className="relative">
           {/* First Content Section - Sentiment Analysis */}
-          <div className="border-t border-l border-r border-[#252525] mb-8 relative z-30">
+          <div className="border-t border-l border-r border-[#252525] relative z-30">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left Image */}
               <div className="w-full lg:w-1/2 relative">
@@ -71,7 +71,7 @@ const AiPresenceSection = () => {
           </div>
 
           {/* Second Content Section - Live AI Mentions */}
-          <div className="border-t border-l border-r border-[#252525] mb-8 relative z-30">
+          <div className="border-t border-l border-r border-[#252525] relative z-30">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left Content */}
               <div className="w-full lg:w-1/2 pt-6 lg:pt-0 px-4">
