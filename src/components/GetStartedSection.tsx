@@ -153,45 +153,42 @@ const GetStartedSection = () => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <div className="relative flex-shrink-0">
-                        {/* Circular progress timer */}
-                        <svg className="w-12 h-12 transform -rotate-90" viewBox="0 0 48 48">
+                        {/* Minimal gradient outline timer */}
+                        <svg 
+                          className="absolute inset-0 w-full h-full transform -rotate-90 pointer-events-none" 
+                          viewBox="0 0 44 44"
+                        >
                           <defs>
-                            <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id={`timer-gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
                               <stop offset="0%" stopColor="#797BEC" />
                               <stop offset="100%" stopColor="#EB894C" />
                             </linearGradient>
                           </defs>
-                          {/* Background circle */}
-                          <circle
-                            cx="24"
-                            cy="24"
-                            r="20"
-                            stroke="#252525"
-                            strokeWidth="2"
-                            fill="none"
-                          />
-                          {/* Progress circle */}
-                          <motion.circle
-                            cx="24"
-                            cy="24"
-                            r="20"
-                            stroke={`url(#gradient-${index})`}
-                            strokeWidth="2"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeDasharray={`${2 * Math.PI * 20}`}
-                            initial={{ strokeDashoffset: 2 * Math.PI * 20 }}
-                            animate={{
-                              strokeDashoffset: isSelected && isAutoPlaying 
-                                ? 2 * Math.PI * 20 * (1 - progress / 100)
-                                : 2 * Math.PI * 20
-                            }}
-                            transition={{ duration: 0.1, ease: "linear" }}
-                          />
+                          {/* Progress circle - very minimal */}
+                          {isSelected && (
+                            <motion.circle
+                              cx="22"
+                              cy="22"
+                              r="20"
+                              stroke={`url(#timer-gradient-${index})`}
+                              strokeWidth="1.5"
+                              fill="none"
+                              strokeLinecap="round"
+                              strokeDasharray={`${2 * Math.PI * 20}`}
+                              initial={{ strokeDashoffset: 2 * Math.PI * 20 }}
+                              animate={{
+                                strokeDashoffset: isAutoPlaying 
+                                  ? 2 * Math.PI * 20 * (1 - progress / 100)
+                                  : 2 * Math.PI * 20
+                              }}
+                              transition={{ duration: 0.1, ease: "linear" }}
+                              style={{ opacity: 0.8 }}
+                            />
+                          )}
                         </svg>
                         {/* Icon in center */}
                         <motion.div 
-                          className="absolute inset-0 flex items-center justify-center p-2 rounded-lg"
+                          className="p-2 rounded-lg flex-shrink-0"
                           animate={{
                             backgroundColor: isSelected ? '#797BEC' : '#252525',
                           }}
