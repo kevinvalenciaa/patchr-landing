@@ -9,7 +9,7 @@ const GetStartedSection = () => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
-  const STEP_DURATION = 8000; // 8 seconds per step
+  const STEP_DURATION = 6000; // 6 seconds per step
   const PROGRESS_UPDATE_INTERVAL = 50; // Update progress every 50ms
 
   const features = [
