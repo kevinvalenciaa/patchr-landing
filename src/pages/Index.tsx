@@ -20,10 +20,18 @@ const Index = () => {
       <HeroSection />
       <DashboardSection />
       <MetricsSection />
-      <FeatureSection />
-      <AiPresenceSection />
-      <GetStartedSection />
-      <AlternatePricingSection />
+      <div id="features">
+        <FeatureSection />
+      </div>
+      <div id="benefits">
+        <AiPresenceSection />
+      </div>
+      <div id="onboarding">
+        <GetStartedSection />
+      </div>
+      <div id="pricing">
+        <AlternatePricingSection />
+      </div>
       <CtaSection />
       <Footer />
       </div>
