@@ -37,10 +37,10 @@ const GetStartedSection = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Get Started in Minutes
           </h2>
-          <p className="text-[#717179] text-lg max-w-2xl mx-auto">
+          <p className="text-xl text-[#a1a1aa] max-w-2xl mx-auto">
             Experience the power of AI-driven brand intelligence with our comprehensive onboarding process designed to get you up and running quickly.
           </p>
         </div>

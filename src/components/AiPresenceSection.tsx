@@ -8,10 +8,10 @@ const AiPresenceSection = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Transform Your Brand's AI Presence
           </h2>
-          <p className="text-[#717179] text-lg max-w-2xl mx-auto">
+          <p className="text-xl text-[#a1a1aa] max-w-2xl mx-auto">
             Leverage cutting-edge AI technology to monitor, analyze, and optimize your brand's digital footprint across all platforms and channels.
           </p>
         </div>
