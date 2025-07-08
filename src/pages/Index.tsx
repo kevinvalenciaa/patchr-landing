@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import DashboardSection from "@/components/DashboardSection";
+import TransformationSection from "@/components/TransformationSection";
 import MetricsSection from "@/components/MetricsSection";
 import FeatureSection from "@/components/FeatureSection";
 import AiPresenceSection from "@/components/AiPresenceSection";
@@ -20,6 +21,7 @@ const Index = () => {
       <HeroSection />
       <DashboardSection />
       <MetricsSection />
+      <TransformationSection />
       <FeatureSection />
       <GetStartedSection />
       <AiPresenceSection />
