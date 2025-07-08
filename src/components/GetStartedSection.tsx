@@ -1,9 +1,16 @@
-import { useState } from "react";
-import { Sparkles, Grid3x3, Code, Zap } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Sparkles, Grid3x3, Code, Zap, Timer } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const GetStartedSection = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  
+  const STEP_DURATION = 4000; // 4 seconds per step
+  const PROGRESS_UPDATE_INTERVAL = 50; // Update progress every 50ms
 
   const features = [
     {
@@ -32,6 +39,55 @@ const GetStartedSection = () => {
     }
   ];
 
+  // Auto-progress through features
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    intervalRef.current = setInterval(() => {
+      setSelectedFeature((prev) => (prev + 1) % features.length);
+      setProgress(0);
+    }, STEP_DURATION);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isAutoPlaying, features.length]);
+
+  // Update progress bar
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    progressIntervalRef.current = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 0;
+        return prev + (100 / (STEP_DURATION / PROGRESS_UPDATE_INTERVAL));
+      });
+    }, PROGRESS_UPDATE_INTERVAL);
+
+    return () => {
+      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+    };
+  }, [isAutoPlaying, selectedFeature]);
+
+  // Clean up on unmount
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+    };
+  }, []);
+
+  const handleFeatureSelect = (index: number) => {
+    setSelectedFeature(index);
+    setIsAutoPlaying(false);
+    setProgress(0);
+    
+    // Resume auto-play after 8 seconds of inactivity
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 8000);
+  };
+
   return (
     <section className="w-full py-20 px-6">
       <div className="max-w-screen-xl mx-auto">
@@ -43,6 +99,32 @@ const GetStartedSection = () => {
           <p className="text-xl text-[#a1a1aa] max-w-2xl mx-auto">
             Experience the power of AI-driven brand intelligence with our comprehensive onboarding process designed to get you up and running quickly.
           </p>
+        </div>
+
+        {/* Timer Indicator */}
+        <div className="flex items-center justify-center mb-8">
+          <div className="flex items-center gap-3 bg-[#0D0D0D] border border-[#252525] rounded-full px-4 py-2">
+            <Timer size={16} className="text-[#797BEC]" />
+            <div className="flex items-center gap-2">
+              <span className="text-[#717179] text-sm font-medium">Auto-play</span>
+              <div className="w-16 h-1 bg-[#252525] rounded-full overflow-hidden">
+                <motion.div 
+                  className="h-full bg-gradient-to-r from-[#797BEC] to-[#EB894C] rounded-full"
+                  initial={{ width: "0%" }}
+                  animate={{ 
+                    width: isAutoPlaying ? `${progress}%` : "0%"
+                  }}
+                  transition={{ 
+                    duration: 0.1,
+                    ease: "linear"
+                  }}
+                />
+              </div>
+              <span className="text-[#717179] text-xs">
+                {selectedFeature + 1}/{features.length}
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="bg-[#0D0D0D] border border-[#252525] rounded-lg overflow-hidden">
@@ -80,7 +162,7 @@ const GetStartedSection = () => {
                           ? 'bg-[#1A1A1A] border border-[#797BEC]/30' 
                           : 'hover:bg-[#151515]'
                       }`}
-                      onClick={() => setSelectedFeature(index)}
+                      onClick={() => handleFeatureSelect(index)}
                       initial={{ opacity: 0, x: -30 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
