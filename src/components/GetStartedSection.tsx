@@ -185,20 +185,16 @@ const GetStartedSection = () => {
                               strokeWidth="2.5"
                               fill="none"
                               strokeLinecap="round"
-                              strokeDasharray="148"
-                              strokeDashoffset="148"
-                              initial={{ strokeDashoffset: "148" }}
+                              strokeDasharray="1"
+                              pathLength="1"
+                              initial={{ strokeDashoffset: "1" }}
                               animate={{
                                 strokeDashoffset: isAutoPlaying 
-                                  ? `${148 - (progress / 100) * 148}`
-                                  : "148"
+                                  ? `${1 - (progress / 100)}`
+                                  : "1"
                               }}
                               transition={{ duration: 0.1, ease: "linear" }}
-                              style={{ 
-                                opacity: 0.9,
-                                transform: 'rotate(-90deg)',
-                                transformOrigin: 'center'
-                              }}
+                              style={{ opacity: 0.9 }}
                             />
                           )}
                         </svg>
