@@ -59,7 +59,7 @@ const CtaSection = () => {
             className="absolute inset-0 pointer-events-none transition-opacity duration-300"
             style={{
               background: isHovering 
-                ? `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.1), transparent 70%)`
+                ? `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.03), transparent 70%)`
                 : 'transparent',
               opacity: isHovering ? 1 : 0
             }}
