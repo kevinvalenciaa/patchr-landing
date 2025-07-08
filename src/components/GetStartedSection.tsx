@@ -161,43 +161,6 @@ const GetStartedSection = () => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <div className="relative flex-shrink-0">
-                        {/* Minimal gradient outline timer */}
-                        <svg 
-                          className="absolute inset-0 w-full h-full pointer-events-none" 
-                          viewBox="0 0 44 44"
-                        >
-                          <defs>
-                            <linearGradient id={`timer-gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#9333ea" />
-                              <stop offset="100%" stopColor="#c084fc" />
-                            </linearGradient>
-                          </defs>
-                          {/* Progress rounded square outline */}
-                          {isSelected && (
-                            <motion.rect
-                              x="2"
-                              y="2"
-                              width="40"
-                              height="40"
-                              rx="8"
-                              ry="8"
-                              stroke={`url(#timer-gradient-${index})`}
-                              strokeWidth="2.5"
-                              fill="none"
-                              strokeLinecap="round"
-                              strokeDasharray="1"
-                              pathLength="1"
-                              initial={{ strokeDashoffset: "1" }}
-                              animate={{
-                                strokeDashoffset: isAutoPlaying 
-                                  ? `${1 - (progress / 100)}`
-                                  : "1"
-                              }}
-                              transition={{ duration: 0.1, ease: "linear" }}
-                              style={{ opacity: 0.9 }}
-                            />
-                          )}
-                        </svg>
                         {/* Icon in center */}
                         <div 
                           className="p-2 rounded-lg flex-shrink-0 bg-[#252525]"
@@ -240,10 +203,9 @@ const GetStartedSection = () => {
                 <motion.div
                   className="relative w-full h-full flex items-center justify-center"
                   key={selectedFeature}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0 }}
                 >
                   {/* Background network pattern */}
                   <div className="absolute inset-0 opacity-20">
