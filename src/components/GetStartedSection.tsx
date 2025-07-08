@@ -101,31 +101,6 @@ const GetStartedSection = () => {
           </p>
         </div>
 
-        {/* Timer Indicator */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="flex items-center gap-3 bg-[#0D0D0D] border border-[#252525] rounded-full px-4 py-2">
-            <Timer size={16} className="text-[#797BEC]" />
-            <div className="flex items-center gap-2">
-              <span className="text-[#717179] text-sm font-medium">Auto-play</span>
-              <div className="w-16 h-1 bg-[#252525] rounded-full overflow-hidden">
-                <motion.div 
-                  className="h-full bg-gradient-to-r from-[#797BEC] to-[#EB894C] rounded-full"
-                  initial={{ width: "0%" }}
-                  animate={{ 
-                    width: isAutoPlaying ? `${progress}%` : "0%"
-                  }}
-                  transition={{ 
-                    duration: 0.1,
-                    ease: "linear"
-                  }}
-                />
-              </div>
-              <span className="text-[#717179] text-xs">
-                {selectedFeature + 1}/{features.length}
-              </span>
-            </div>
-          </div>
-        </div>
 
         <div className="bg-[#0D0D0D] border border-[#252525] rounded-lg overflow-hidden">
           <div className="flex flex-col lg:flex-row min-h-[600px]">
@@ -177,18 +152,57 @@ const GetStartedSection = () => {
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <motion.div 
-                        className="p-2 rounded-lg flex-shrink-0"
-                        animate={{
-                          backgroundColor: isSelected ? '#797BEC' : '#252525',
-                        }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                      >
-                        <IconComponent 
-                          size={20} 
-                          className={isSelected ? 'text-white' : 'text-[#717179]'} 
-                        />
-                      </motion.div>
+                      <div className="relative flex-shrink-0">
+                        {/* Circular progress timer */}
+                        <svg className="w-12 h-12 transform -rotate-90" viewBox="0 0 48 48">
+                          <defs>
+                            <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stopColor="#797BEC" />
+                              <stop offset="100%" stopColor="#EB894C" />
+                            </linearGradient>
+                          </defs>
+                          {/* Background circle */}
+                          <circle
+                            cx="24"
+                            cy="24"
+                            r="20"
+                            stroke="#252525"
+                            strokeWidth="2"
+                            fill="none"
+                          />
+                          {/* Progress circle */}
+                          <motion.circle
+                            cx="24"
+                            cy="24"
+                            r="20"
+                            stroke={`url(#gradient-${index})`}
+                            strokeWidth="2"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeDasharray={`${2 * Math.PI * 20}`}
+                            initial={{ strokeDashoffset: 2 * Math.PI * 20 }}
+                            animate={{
+                              strokeDashoffset: isSelected && isAutoPlaying 
+                                ? 2 * Math.PI * 20 * (1 - progress / 100)
+                                : 2 * Math.PI * 20
+                            }}
+                            transition={{ duration: 0.1, ease: "linear" }}
+                          />
+                        </svg>
+                        {/* Icon in center */}
+                        <motion.div 
+                          className="absolute inset-0 flex items-center justify-center p-2 rounded-lg"
+                          animate={{
+                            backgroundColor: isSelected ? '#797BEC' : '#252525',
+                          }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                        >
+                          <IconComponent 
+                            size={20} 
+                            className={isSelected ? 'text-white' : 'text-[#717179]'} 
+                          />
+                        </motion.div>
+                      </div>
                       <div>
                         <motion.h3 
                           className="font-semibold mb-2"
