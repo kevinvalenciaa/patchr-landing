@@ -17,16 +17,6 @@ const AiPresenceSection = () => {
         </div>
 
         <div className="relative">
-          {/* Connecting Lines */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#797BEC] via-[#EB894C] to-[#797BEC] opacity-30 z-10 hidden lg:block" />
-          
-          {/* Connection Dots */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden lg:block">
-            <div className="absolute top-[200px] w-3 h-3 bg-[#797BEC] rounded-full shadow-lg shadow-[#797BEC]/50" />
-            <div className="absolute top-[600px] w-3 h-3 bg-[#EB894C] rounded-full shadow-lg shadow-[#EB894C]/50" />
-            <div className="absolute top-[1000px] w-3 h-3 bg-[#797BEC] rounded-full shadow-lg shadow-[#797BEC]/50" />
-          </div>
-
           {/* First Content Section - Sentiment Analysis */}
           <div className="border-t border-l border-r border-[#252525] mb-8 relative z-30">
             <div className="flex flex-col lg:flex-row items-center gap-8">
