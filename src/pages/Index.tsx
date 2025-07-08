@@ -21,8 +21,8 @@ const Index = () => {
       <DashboardSection />
       <MetricsSection />
       <FeatureSection />
-      <GetStartedSection />
       <AiPresenceSection />
+      <GetStartedSection />
       <AlternatePricingSection />
       <CtaSection />
       <Footer />
