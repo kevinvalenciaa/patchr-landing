@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -70,7 +69,6 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center space-x-3 ml-auto">
-            <ThemeToggle />
             <Button className="px-4 py-2.5 text-sm font-semibold leading-5 text-white rounded-xl border border-white/32 font-sans" style={{
               background: 'linear-gradient(180deg, #6445F5 0%, #4128BA 100%)'
             }}>
