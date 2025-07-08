@@ -31,16 +31,20 @@ const CtaSection = () => {
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#797BEC]/5 via-transparent to-[#EB894C]/5"></div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-screen-xl mx-auto relative z-10">
         <motion.div 
-          className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden relative"
+          className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden relative group"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
+          whileHover={{ 
+            scale: 1.01,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
         >
           {/* Glass effect overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-2xl group-hover:from-white/15 group-hover:to-white/8 transition-all duration-300"></div>
           
           {/* Content */}
           <motion.div 
