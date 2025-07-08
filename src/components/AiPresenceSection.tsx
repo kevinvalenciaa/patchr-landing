@@ -1,11 +1,20 @@
-
 import { Button } from "@/components/ui/button";
 import { Globe, Bell, TrendingUp, Zap, BarChart3, MousePointer } from "lucide-react";
 import { motion } from "framer-motion";
 
 const AiPresenceSection = () => {
-  return <div className="w-full min-h-screen relative py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
+  return (
+    <section className="w-full py-20 px-6 bg-[#000000]">
+      <div className="max-w-screen-xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            Transform Your Brand's AI Presence
+          </h2>
+          <p className="text-[#717179] text-lg max-w-2xl mx-auto">
+            Leverage cutting-edge AI technology to monitor, analyze, and optimize your brand's digital footprint across all platforms and channels.
+          </p>
+        </div>
 
         {/* First Content Section - Sentiment Analysis */}
         <div className="border-t border-l border-r border-[#252525] mb-8">
@@ -166,7 +175,8 @@ const AiPresenceSection = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </section>
+  );
 };
 
 export default AiPresenceSection;

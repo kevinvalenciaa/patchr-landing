@@ -35,6 +35,16 @@ const GetStartedSection = () => {
   return (
     <section className="w-full py-20 px-6">
       <div className="max-w-screen-xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            Get Started in Minutes
+          </h2>
+          <p className="text-[#717179] text-lg max-w-2xl mx-auto">
+            Experience the power of AI-driven brand intelligence with our comprehensive onboarding process designed to get you up and running quickly.
+          </p>
+        </div>
+
         <div className="bg-[#0D0D0D] border border-[#252525] rounded-lg overflow-hidden">
           <div className="flex flex-col lg:flex-row min-h-[600px]">
             {/* Left side - Feature list */}
@@ -46,12 +56,12 @@ const GetStartedSection = () => {
                 transition={{ duration: 0.6 }}
                 className="mb-8"
               >
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
                   AI-Powered Brand
-                </h2>
-                <h2 className="text-3xl lg:text-4xl font-bold text-[#797BEC] mb-6">
+                </h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-[#797BEC] mb-6">
                   Intelligence Platform
-                </h2>
+                </h3>
                 <p className="text-[#717179] text-lg">
                   Experience comprehensive brand monitoring with AI-powered tools and 
                   analytics designed for modern businesses and brands.
