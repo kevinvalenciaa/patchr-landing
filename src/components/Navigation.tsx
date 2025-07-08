@@ -40,7 +40,9 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center space-x-3">
-            <Button size="sm" className="bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 rounded-lg shadow-sm border-0">
+            <Button className="px-4 py-2.5 text-sm font-semibold leading-5 text-white rounded-xl border border-white/32 font-sans" style={{
+              background: 'linear-gradient(180deg, #6445F5 0%, #4128BA 100%)'
+            }}>
               Get Started
             </Button>
           </div>
