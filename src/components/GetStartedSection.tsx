@@ -198,14 +198,14 @@ const GetStartedSection = () => {
 
             {/* Right side - Visual representation */}
             <div className="w-full lg:w-1/2 relative bg-[#0F0F0F] border-l border-[#252525] flex items-center justify-center p-8">
-              <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait">
                 <motion.div
                   className="relative w-full h-full flex items-center justify-center"
                   key={selectedFeature}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
 
                   {/* Feature image */}
