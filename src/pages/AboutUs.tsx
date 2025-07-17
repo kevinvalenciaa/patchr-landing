@@ -7,15 +7,15 @@ import Footer from "@/components/Footer";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-[#000000] w-full">
+    <div className="min-h-screen bg-background w-full">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="w-full py-20 bg-black">
+      <section className="w-full py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-20">
             <motion.h1 
-              className="text-4xl md:text-[64px] font-bold text-white leading-[72px] mb-8"
+              className="text-4xl md:text-[64px] font-bold text-foreground leading-[72px] mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -23,7 +23,7 @@ const AboutUs = () => {
               About Webfluin
             </motion.h1>
             <motion.p 
-              className="text-[#717179] text-xl font-medium leading-[26px] mb-12 max-w-[600px] mx-auto"
+              className="text-muted-foreground text-xl font-medium leading-[26px] mb-12 max-w-[600px] mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -35,12 +35,12 @@ const AboutUs = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="w-full py-20 bg-black border-t border-[#252525]">
+      <section className="w-full py-20 bg-background border-t border-border">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <motion.h2 
-                className="text-4xl font-bold text-white leading-[44px] mb-6"
+                className="text-4xl font-bold text-foreground leading-[44px] mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -49,7 +49,7 @@ const AboutUs = () => {
                 Our Story
               </motion.h2>
               <motion.p 
-                className="text-[#717179] text-lg font-medium leading-[23.4px] mb-6"
+                className="text-muted-foreground text-lg font-medium leading-[23.4px] mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -58,7 +58,7 @@ const AboutUs = () => {
                 Founded in 2024, Webfluin emerged from a simple observation: as AI becomes increasingly integrated into how people discover and interact with brands, traditional analytics tools weren't designed to capture this new reality.
               </motion.p>
               <motion.p 
-                className="text-[#717179] text-lg font-medium leading-[23.4px]"
+                className="text-muted-foreground text-lg font-medium leading-[23.4px]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -79,11 +79,11 @@ const AboutUs = () => {
       </section>
 
       {/* Values Section */}
-      <section className="w-full py-20 bg-black border-t border-[#252525]">
+      <section className="w-full py-20 bg-background border-t border-border">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <motion.h2 
-              className="text-4xl font-bold text-white leading-[44px] mb-6"
+              className="text-4xl font-bold text-foreground leading-[44px] mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -92,7 +92,7 @@ const AboutUs = () => {
               Our Values
             </motion.h2>
             <motion.p 
-              className="text-[#717179] text-lg font-medium leading-[23.4px] max-w-[500px] mx-auto"
+              className="text-muted-foreground text-lg font-medium leading-[23.4px] max-w-[500px] mx-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -171,11 +171,11 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="w-full py-20 bg-black border-t border-[#252525]">
+      <section className="w-full py-20 bg-background border-t border-border">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <motion.h2 
-              className="text-4xl font-bold text-white leading-[44px] mb-6"
+              className="text-4xl font-bold text-foreground leading-[44px] mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -184,7 +184,7 @@ const AboutUs = () => {
               Meet Our Team
             </motion.h2>
             <motion.p 
-              className="text-[#717179] text-lg font-medium leading-[23.4px] max-w-[500px] mx-auto"
+              className="text-muted-foreground text-lg font-medium leading-[23.4px] max-w-[500px] mx-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -256,10 +256,10 @@ const AboutUs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-20 bg-black border-t border-[#252525]">
+      <section className="w-full py-20 bg-background border-t border-border">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <motion.h2 
-            className="text-4xl font-bold text-white leading-[44px] mb-6"
+            className="text-4xl font-bold text-foreground leading-[44px] mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -268,7 +268,7 @@ const AboutUs = () => {
             Ready to Get Started?
           </motion.h2>
           <motion.p 
-            className="text-[#717179] text-lg font-medium leading-[23.4px] mb-8 max-w-[500px] mx-auto"
+            className="text-muted-foreground text-lg font-medium leading-[23.4px] mb-8 max-w-[500px] mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -277,10 +277,10 @@ const AboutUs = () => {
             Join the brands already using Webfluin to understand their AI presence and optimize for the future.
           </motion.p>
           <div className="flex gap-4 justify-center">
-            <Button variant="default" className="bg-white text-[#0D0D0D] hover:bg-gray-100 px-6 py-2 rounded-lg">
+            <Button variant="default" className="bg-foreground text-background hover:bg-foreground/90 px-6 py-2 rounded-lg">
               Try for free
             </Button>
-            <Button variant="secondary" className="bg-[#171717] text-white hover:bg-[#252525] px-6 py-2 rounded-lg shadow-sm">
+            <Button variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-2 rounded-lg shadow-sm">
               Book a demo
             </Button>
           </div>

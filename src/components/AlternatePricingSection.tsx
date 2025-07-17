@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 const AlternatePricingSection = () => {
   return (
-    <section className="w-full py-20 px-6 bg-black">
+    <section className="w-full py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -19,7 +19,7 @@ const AlternatePricingSection = () => {
             Simple Plans for Brand Monitoring
           </motion.h2>
           <motion.p 
-            className="text-xl text-[#717179] max-w-lg mx-auto"
+            className="text-xl text-muted-foreground max-w-lg mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -30,14 +30,14 @@ const AlternatePricingSection = () => {
         </div>
 
         {/* Pricing Cards Container - Desktop Row Layout */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 max-w-6xl mx-auto border-t border-b border-[#252525]">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 max-w-6xl mx-auto border-t border-b border-border">
           
           {/* Solo Plan */}
-          <div className="relative w-full lg:w-[375.34px] h-[624.78px] bg-[rgba(12.75,12.75,12.75,0.50)] overflow-hidden border border-[#252525] lg:border-r-0">
+          <div className="relative w-full lg:w-[375.34px] h-[624.78px] bg-muted/40 overflow-hidden border border-border lg:border-r-0">
             {/* Header */}
             <div className="absolute left-8 top-8 w-[311.34px] h-[92.80px] overflow-hidden">
-              <div className="absolute left-0 top-0 w-[86.13px] h-9 text-white text-2xl font-bold leading-9 font-inter">Solo</div>
-              <div className="absolute left-0 top-[46.50px] w-[245.75px] h-[45.40px] text-[#717179] text-lg font-normal leading-[23.40px] font-inter">
+              <div className="absolute left-0 top-0 w-[86.13px] h-9 text-foreground text-2xl font-bold leading-9 font-inter">Solo</div>
+              <div className="absolute left-0 top-[46.50px] w-[245.75px] h-[45.40px] text-muted-foreground text-lg font-normal leading-[23.40px] font-inter">
                 For individuals or small teams<br />beginning verification.
               </div>
             </div>
@@ -45,10 +45,10 @@ const AlternatePricingSection = () => {
             {/* Price */}
             <div className="absolute left-8 top-[274.80px] w-[311.34px] h-[82.80px] overflow-hidden">
               <div className="absolute left-0 top-[-0.11px] w-[206px] h-[52px]">
-                <span className="text-white text-[44px] font-bold leading-[52px] font-inter">$79</span>
-                <span className="text-white text-2xl font-bold leading-[52px] font-inter">.99</span>
+                <span className="text-foreground text-[44px] font-bold leading-[52px] font-inter">$79</span>
+                <span className="text-foreground text-2xl font-bold leading-[52px] font-inter">.99</span>
               </div>
-              <div className="absolute left-0 top-[62px] w-[231.64px] h-[20.80px] text-[#717179] text-base font-normal leading-[20.80px] font-inter">
+              <div className="absolute left-0 top-[62px] w-[231.64px] h-[20.80px] text-muted-foreground text-base font-normal leading-[20.80px] font-inter">
                 Affordable for early-stage users
               </div>
             </div>
@@ -98,11 +98,11 @@ const AlternatePricingSection = () => {
           </div>
 
           {/* Growth Plan */}
-          <div className="relative w-full lg:w-[375.34px] h-[624.78px] bg-[#0D0D0D] overflow-hidden border border-[#252525]">
+          <div className="relative w-full lg:w-[375.34px] h-[624.78px] bg-muted/40 overflow-hidden border border-border">
             {/* Header */}
             <div className="absolute left-8 top-8 w-[311.34px] h-[92.80px] overflow-hidden">
-              <div className="absolute left-0 top-0 w-[84.52px] h-9 text-white text-2xl font-bold leading-9 font-inter">Growth</div>
-              <div className="absolute left-0 top-[46.50px] w-[252.28px] h-[45.40px] text-[#717179] text-lg font-normal leading-[23.40px] font-inter">
+              <div className="absolute left-0 top-0 w-[84.52px] h-9 text-foreground text-2xl font-bold leading-9 font-inter">Growth</div>
+              <div className="absolute left-0 top-[46.50px] w-[252.28px] h-[45.40px] text-muted-foreground text-lg font-normal leading-[23.40px] font-inter">
                 For growing organizations and<br />collaborative team usage.
               </div>
             </div>
@@ -110,10 +110,10 @@ const AlternatePricingSection = () => {
             {/* Price */}
             <div className="absolute left-8 top-[274.80px] w-[311.34px] h-[82.80px] overflow-hidden">
               <div className="absolute left-[-0.34px] top-[-0.11px] w-[216px] h-[52px]">
-                <span className="text-white text-[44px] font-bold leading-[52px] font-inter">$197</span>
-                <span className="text-white text-2xl font-bold leading-[52px] font-inter">.99</span>
+                <span className="text-foreground text-[44px] font-bold leading-[52px] font-inter">$197</span>
+                <span className="text-foreground text-2xl font-bold leading-[52px] font-inter">.99</span>
               </div>
-              <div className="absolute left-0 top-[62px] w-[189.07px] h-[20.80px] text-[#717179] text-base font-normal leading-[20.80px] font-inter">
+              <div className="absolute left-0 top-[62px] w-[189.07px] h-[20.80px] text-muted-foreground text-base font-normal leading-[20.80px] font-inter">
                 Perfect for growing teams
               </div>
             </div>
@@ -164,11 +164,11 @@ const AlternatePricingSection = () => {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="relative w-full lg:w-[375.34px] h-[624.78px] bg-[rgba(12.75,12.75,12.75,0.50)] overflow-hidden border border-[#252525] lg:border-l-0">
+          <div className="relative w-full lg:w-[375.34px] h-[624.78px] bg-muted/40 overflow-hidden border border-border lg:border-l-0">
             {/* Header */}
             <div className="absolute left-8 top-8 w-[311.34px] h-[92.80px] overflow-hidden">
-              <div className="absolute left-0 top-0 w-[118.13px] h-9 text-white text-2xl font-bold leading-9 font-inter">Enterprise</div>
-              <div className="absolute left-0 top-[46.50px] w-[267.19px] h-[45.40px] text-[#717179] text-lg font-normal leading-[23.40px] font-inter">
+              <div className="absolute left-0 top-0 w-[118.13px] h-9 text-foreground text-2xl font-bold leading-9 font-inter">Enterprise</div>
+              <div className="absolute left-0 top-[46.50px] w-[267.19px] h-[45.40px] text-muted-foreground text-lg font-normal leading-[23.40px] font-inter">
                 Essential security, performance,<br />monitoring, and support.
               </div>
             </div>
@@ -176,10 +176,10 @@ const AlternatePricingSection = () => {
             {/* Price */}
             <div className="absolute left-8 top-[274.80px] w-[311.34px] h-[82.80px] overflow-hidden">
               <div className="absolute left-0 top-0 w-[164.85px] h-[52px]">
-                <span className="text-white text-[44px] font-bold leading-[52px] font-inter">$479</span>
-                <span className="text-white text-2xl font-bold leading-[52px] font-inter">.99</span>
+                <span className="text-foreground text-[44px] font-bold leading-[52px] font-inter">$479</span>
+                <span className="text-foreground text-2xl font-bold leading-[52px] font-inter">.99</span>
               </div>
-              <div className="absolute left-0 top-[62px] w-[237.95px] h-[20.80px] text-[#717179] text-base font-normal leading-[20.80px] font-inter">
+              <div className="absolute left-0 top-[62px] w-[237.95px] h-[20.80px] text-muted-foreground text-base font-normal leading-[20.80px] font-inter">
                 Tailored solutions for enterprises
               </div>
             </div>

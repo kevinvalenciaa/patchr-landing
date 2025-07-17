@@ -6,9 +6,9 @@ const DashboardSection = () => {
     <section className="w-full py-12 px-6 relative overflow-visible">
       <div className="max-w-screen-xl mx-auto">
         <div className="relative rounded-full">
-          <div className="bg-[#1a1a1a] shadow-2xl overflow-hidden border border-[#262626] rounded-3xl" 
+          <div className="bg-muted/40 shadow-2xl overflow-hidden border border-border rounded-3xl" 
                style={{
-                 boxShadow: '0 0 80px rgba(100, 69, 245, 0.5), 0 0 160px rgba(100, 69, 245, 0.3), 0 0 240px rgba(100, 69, 245, 0.1)'
+                 boxShadow: '0 0 80px rgba(100, 69, 245, 0.4), 0 0 160px rgba(100, 69, 245, 0.25), 0 0 240px rgba(100, 69, 245, 0.15)'
                }}>
             <img 
               alt="Dashboard interface showing financial management tools" 

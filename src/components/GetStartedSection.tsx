@@ -94,17 +94,17 @@ const GetStartedSection = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Get Started in Minutes
           </h2>
-          <p className="text-xl text-[#a1a1aa] max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Experience the power of AI-driven brand intelligence with our comprehensive onboarding process designed to get you up and running quickly.
           </p>
         </div>
 
 
         <motion.div 
-          className="bg-[#0D0D0D] border border-[#252525] rounded-lg overflow-hidden"
+          className="bg-background border border-border rounded-lg overflow-hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           onViewportEnter={() => setIsInView(true)}
@@ -121,13 +121,13 @@ const GetStartedSection = () => {
                 transition={{ duration: 0.6 }}
                 className="mb-8"
               >
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                   AI-Powered Brand
                 </h3>
                 <h3 className="text-2xl lg:text-3xl font-bold text-[#797BEC] mb-6">
                   Intelligence Platform
                 </h3>
-                <p className="text-[#717179] text-lg">
+                <p className="text-muted-foreground text-lg">
                   Experience comprehensive brand monitoring with AI-powered tools and 
                   analytics designed for modern businesses and brands.
                 </p>
@@ -142,8 +142,8 @@ const GetStartedSection = () => {
                       key={index}
                       className={`flex items-start gap-4 p-4 rounded-lg cursor-pointer ${
                         isSelected 
-                          ? 'bg-[#1A1A1A] border border-[#797BEC]/30' 
-                          : 'hover:bg-[#151515]'
+                          ? 'bg-muted/40 border border-muted' 
+                          : 'hover:bg-muted/20'
                       }`}
                       onClick={() => handleFeatureSelect(index)}
                       initial={{ opacity: 0, x: -30 }}
@@ -151,53 +151,41 @@ const GetStartedSection = () => {
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       animate={{
-                        backgroundColor: isSelected ? '#1A1A1A' : 'transparent',
-                        borderColor: isSelected ? 'rgba(121, 123, 236, 0.3)' : 'transparent',
+                        backgroundColor: isSelected ? 'hsl(var(--muted) / 0.4)' : 'transparent',
+                        borderColor: isSelected ? 'hsl(var(--muted))' : 'transparent',
                       }}
                       whileHover={{ 
-                        backgroundColor: isSelected ? '#1A1A1A' : '#151515',
+                        backgroundColor: isSelected ? 'hsl(var(--muted) / 0.4)' : 'hsl(var(--muted) / 0.2)',
                         transition: { duration: 0.2 }
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <div className="flex-shrink-0">
                         <div 
-                          className="p-2 rounded-lg flex-shrink-0 bg-[#252525]"
+                          className="p-2 rounded-lg flex-shrink-0 bg-muted/60"
                         >
                           <IconComponent 
                             size={20} 
-                            className="text-[#717179]" 
+                            className="text-muted-foreground" 
                           />
                         </div>
                       </div>
-                      <div>
-                        <motion.h3 
-                          className="font-semibold mb-2"
-                          animate={{
-                            color: isSelected ? '#ffffff' : '#a1a1aa'
-                          }}
-                          transition={{ duration: 0.2 }}
-                        >
+                      <div className="flex-1">
+                        <h3 className="text-foreground text-lg font-semibold mb-1 leading-tight">
                           {feature.title}
-                        </motion.h3>
-                        <motion.p 
-                          className="text-sm"
-                          animate={{
-                            color: isSelected ? '#a1a1aa' : '#717179'
-                          }}
-                          transition={{ duration: 0.2 }}
-                        >
+                        </h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
                           {feature.description}
-                        </motion.p>
+                        </p>
                       </div>
                     </motion.div>
                   );
                 })}
               </div>
             </div>
-
-            {/* Right side - Visual representation */}
-            <div className="w-full lg:w-1/2 relative bg-[#0F0F0F] border-l border-[#252525] flex items-center justify-center p-8">
+            
+            {/* Right Side - Feature Image */}
+            <div className="w-full lg:w-1/2 relative bg-muted border-l border-border flex items-center justify-center p-8">
             <AnimatePresence mode="wait">
                 <motion.div
                   className="relative w-full h-full flex items-center justify-center"
@@ -210,7 +198,7 @@ const GetStartedSection = () => {
 
                   {/* Feature image */}
                   <motion.div 
-                    className="relative z-10 bg-[#1A1A1A] rounded-xl p-6 border border-[#252525] max-w-[80%]"
+                    className="relative z-10 bg-muted/40 rounded-xl p-6 border border-border max-w-[80%]"
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
@@ -227,7 +215,7 @@ const GetStartedSection = () => {
                             key={i} 
                             className="w-2 h-2 rounded-full"
                             animate={{
-                              backgroundColor: i === selectedFeature ? '#797BEC' : '#252525'
+                              backgroundColor: i === selectedFeature ? '#797BEC' : 'hsl(var(--muted))'
                             }}
                             transition={{ duration: 0.3 }}
                           />

@@ -29,9 +29,9 @@ const FeatureSection = () => {
   // Border classes for each card position to create shared grid lines
   const cardBorders = [
     "", // Top-left: no borders
-    "border-l border-[#252525]", // Top-right: left border only
-    "border-t border-[#252525]", // Bottom-left: top border only
-    "border-l border-t border-[#252525]" // Bottom-right: left and top borders
+    "border-l border-border", // Top-right: left border only
+    "border-t border-border", // Bottom-left: top border only
+    "border-l border-t border-border" // Bottom-right: left and top borders
   ];
 
   const containerVariants = {
@@ -66,10 +66,10 @@ const FeatureSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Stay in control, work smarter
           </h1>
-          <p className="text-xl text-[#a1a1aa] max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Powerful tools to manage your finances effortlessly, so you can focus on what matters.
           </p>
         </motion.div>
@@ -77,7 +77,7 @@ const FeatureSection = () => {
         <div className="relative">
           {/* Seamless 2x2 Grid Container with outer border */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-0 bg-[#0D0D0D] border border-[#252525] rounded-lg overflow-hidden h-auto md:h-[900px]"
+            className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-0 bg-muted/40 border border-border rounded-lg overflow-hidden h-auto md:h-[900px]"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -86,7 +86,7 @@ const FeatureSection = () => {
             {features.map((feature, index) => (
               <div 
                 key={index} 
-                className={`flex flex-col justify-between h-full md:h-[450px] bg-[#0D0D0D] ${cardBorders[index]}`}
+                className={`flex flex-col justify-between h-full md:h-[450px] bg-muted/40 ${cardBorders[index]}`}
               >
                 <div className="h-64 md:h-1/2 overflow-visible bg-transparent">
                   <img 
@@ -100,10 +100,10 @@ const FeatureSection = () => {
                   className="flex flex-col justify-end p-5 pb-5 pl-5 bg-transparent"
                   variants={textVariants}
                 >
-                  <h3 className="text-lg font-semibold text-white mb-3">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-[#a1a1aa] text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </motion.div>

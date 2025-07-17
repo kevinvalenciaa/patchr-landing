@@ -55,10 +55,10 @@ const MetricsSection = () => {
               className="text-center"
               variants={itemVariants}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 {metric.number}
               </h2>
-              <p className="text-[#a1a1aa] text-sm leading-relaxed max-w-xs mx-auto">
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">
                 {metric.description}
               </p>
             </motion.div>

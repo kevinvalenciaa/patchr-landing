@@ -37,7 +37,7 @@ const HeroSection = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight"
             variants={itemVariants}
           >
             Better insights. Zero friction.{" "}
@@ -45,7 +45,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-xl text-[#a1a1aa] mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
             Intelligent billing, streamlined project tracking, and unified business operations — everything in one platform.

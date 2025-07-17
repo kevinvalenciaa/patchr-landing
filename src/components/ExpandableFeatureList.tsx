@@ -35,7 +35,7 @@ const ExpandableFeatureList = () => {
             <CollapsibleTrigger className="w-full">
               <div className="flex items-center justify-between gap-3 cursor-pointer">
                 <div className="text-left flex-1">
-                  <div className="text-[#09090B] text-xl font-medium leading-[26px]">
+                  <div className="text-foreground text-xl font-medium leading-[26px]">
                     {feature.title}
                   </div>
                   {feature.description}
@@ -44,13 +44,13 @@ const ExpandableFeatureList = () => {
             </CollapsibleTrigger>
             
             <CollapsibleContent className="mt-2">
-              <div className="text-[#717179] text-sm font-normal leading-[18.2px]">
+              <div className="text-muted-foreground text-sm font-normal leading-[18.2px]">
                 {feature.expandedContent}
               </div>
             </CollapsibleContent>
           </Collapsible>
           
-          {index < features.length - 1 && <div className="h-px bg-[#52525A] opacity-20 my-3" />}
+          {index < features.length - 1 && <div className="h-px bg-border opacity-20 my-3" />}
         </div>)}
     </div>;
 };

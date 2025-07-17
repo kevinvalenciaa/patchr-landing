@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 
 const AiPresenceSection = () => {
   return (
-    <section className="w-full py-20 px-6 bg-[#000000]">
+    <section className="w-full py-20 px-6 bg-background">
       <div className="max-w-screen-xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Transform Your Brand's AI Presence
           </h2>
-          <p className="text-xl text-[#a1a1aa] max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Leverage cutting-edge AI technology to monitor, analyze, and optimize your brand's digital footprint across all platforms and channels.
           </p>
         </div>
 
         <div className="relative">
           {/* First Content Section - Sentiment Analysis */}
-          <div className="border-t border-l border-r border-[#252525] relative z-30">
+          <div className="border-t border-l border-r border-border relative z-30 bg-muted/40">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left Image */}
               <div className="w-full lg:w-1/2 relative">
@@ -32,7 +32,7 @@ const AiPresenceSection = () => {
               <div className="w-full lg:w-1/2 px-4">
                 <div className="mb-8">
                   <motion.h3 
-                    className="text-white text-4xl font-bold leading-[44px] mb-4"
+                    className="text-foreground text-4xl font-bold leading-[44px] mb-4"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -41,7 +41,7 @@ const AiPresenceSection = () => {
                     Brand Perception Analytics
                   </motion.h3>
                   <motion.p 
-                    className="text-[#717179] text-lg font-medium leading-[23.4px]"
+                    className="text-muted-foreground text-lg font-medium leading-[23.4px]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -55,15 +55,15 @@ const AiPresenceSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <Zap size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Sentiment scoring</span>
+                    <span className="text-foreground text-base font-medium">Sentiment scoring</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Zap size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Context analysis</span>
+                    <span className="text-foreground text-base font-medium">Context analysis</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Zap size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Trend monitoring</span>
+                    <span className="text-foreground text-base font-medium">Trend monitoring</span>
                   </div>
                 </div>
               </div>
@@ -71,13 +71,13 @@ const AiPresenceSection = () => {
           </div>
 
           {/* Second Content Section - Live AI Mentions */}
-          <div className="border-t border-l border-r border-[#252525] relative z-30">
+          <div className="border-t border-l border-r border-border relative z-30 bg-muted/40">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left Content */}
               <div className="w-full lg:w-1/2 pt-6 lg:pt-0 px-4">
                 <div className="mb-8">
                   <motion.h3 
-                    className="text-white text-4xl font-bold leading-[44px] mb-4"
+                    className="text-foreground text-4xl font-bold leading-[44px] mb-4"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -86,7 +86,7 @@ const AiPresenceSection = () => {
                     Live AI Mentions
                   </motion.h3>
                   <motion.p 
-                    className="text-[#717179] text-lg font-medium leading-[23.4px]"
+                    className="text-muted-foreground text-lg font-medium leading-[23.4px]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -100,15 +100,15 @@ const AiPresenceSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <Globe size={20} className="text-[#797BEC] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Real-time brand monitoring</span>
+                    <span className="text-foreground text-base font-medium">Real-time brand monitoring</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Bell size={20} className="text-[#797BEC] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Instant mention alerts</span>
+                    <span className="text-foreground text-base font-medium">Instant mention alerts</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <TrendingUp size={20} className="text-[#797BEC] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Mention frequency tracking</span>
+                    <span className="text-foreground text-base font-medium">Mention frequency tracking</span>
                   </div>
                 </div>
               </div>
@@ -124,7 +124,7 @@ const AiPresenceSection = () => {
           </div>
 
           {/* Third Content Section - Referral Analytics */}
-          <div className="border-t border-l border-r border-[#252525] relative z-30">
+          <div className="border-t border-l border-r border-border relative z-30 bg-muted/40">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left Image */}
               <div className="w-full lg:w-1/2 relative">
@@ -138,7 +138,7 @@ const AiPresenceSection = () => {
               <div className="w-full lg:w-1/2 px-4">
                 <div className="mb-8">
                   <motion.h3 
-                    className="text-white text-4xl font-bold leading-[44px] mb-4"
+                    className="text-foreground text-4xl font-bold leading-[44px] mb-4"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -147,7 +147,7 @@ const AiPresenceSection = () => {
                     AI-Driven Traffic Intelligence
                   </motion.h3>
                   <motion.p 
-                    className="text-[#717179] text-lg font-medium leading-[23.4px]"
+                    className="text-muted-foreground text-lg font-medium leading-[23.4px]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -161,15 +161,15 @@ const AiPresenceSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <BarChart3 size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Traffic attribution</span>
+                    <span className="text-foreground text-base font-medium">Traffic attribution</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Bell size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">Conversion tracking</span>
+                    <span className="text-foreground text-base font-medium">Conversion tracking</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <MousePointer size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-white text-base font-medium">ROI measurement</span>
+                    <span className="text-foreground text-base font-medium">ROI measurement</span>
                   </div>
                 </div>
               </div>
