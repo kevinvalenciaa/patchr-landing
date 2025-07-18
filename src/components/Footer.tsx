@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center mb-6 md:mb-0">
-            <div className="text-foreground font-bold text-xl">Webfluin</div>
+            <div className="text-foreground font-bold text-xl">patchr.</div>
           </div>
           
           <div className="flex items-center space-x-4">

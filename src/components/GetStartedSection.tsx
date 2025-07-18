@@ -6,12 +6,9 @@ const GetStartedSection = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isInView, setIsInView] = useState(false);
-  const [progress, setProgress] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
   const STEP_DURATION = 6000; // 6 seconds per step
-  const PROGRESS_UPDATE_INTERVAL = 50; // Update progress every 50ms
 
   const features = [
     {
@@ -44,49 +41,29 @@ const GetStartedSection = () => {
   useEffect(() => {
     if (!isAutoPlaying || !isInView) return;
 
+    // By re-running this effect when `selectedFeature` changes, we effectively
+    // reset the timer, ensuring a seamless transition to the next step after the duration.
+    if (intervalRef.current) clearInterval(intervalRef.current);
+
     intervalRef.current = setInterval(() => {
       setSelectedFeature((prev) => (prev + 1) % features.length);
-      setProgress(0);
     }, STEP_DURATION);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-    }, [isAutoPlaying, isInView, features.length]);
-
-  // Update progress bar
-  useEffect(() => {
-    if (!isAutoPlaying || !isInView) return;
-
-    progressIntervalRef.current = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) return 0;
-        return prev + (100 / (STEP_DURATION / PROGRESS_UPDATE_INTERVAL));
-      });
-    }, PROGRESS_UPDATE_INTERVAL);
-
-    return () => {
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
-    };
-  }, [isAutoPlaying, isInView, selectedFeature]);
+  }, [isAutoPlaying, isInView, features.length, selectedFeature]);
 
   // Clean up on unmount
   useEffect(() => {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     };
   }, []);
 
   const handleFeatureSelect = (index: number) => {
     setSelectedFeature(index);
-    setIsAutoPlaying(false);
-    setProgress(0);
-    
-    // Resume auto-play after 8 seconds of inactivity
-    setTimeout(() => {
-      setIsAutoPlaying(true);
-    }, 8000);
+    // The auto-play pause has been removed to allow continuous cycling.
   };
 
   return (
@@ -140,7 +117,7 @@ const GetStartedSection = () => {
                   return (
                     <motion.div
                       key={index}
-                      className={`flex items-start gap-4 p-4 rounded-lg cursor-pointer ${
+                      className={`relative flex items-start gap-4 p-4 rounded-lg cursor-pointer ${
                         isSelected 
                           ? 'bg-muted/40 border border-muted' 
                           : 'hover:bg-muted/20'
@@ -178,6 +155,19 @@ const GetStartedSection = () => {
                           {feature.description}
                         </p>
                       </div>
+                      
+                      {/* Progress bar for selected step */}
+                      {isSelected && (
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-muted/30 rounded-b-lg overflow-hidden">
+                          <motion.div
+                            key={selectedFeature}
+                            className="h-full bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] rounded-b-lg"
+                            initial={{ width: "0%" }}
+                            animate={{ width: "100%" }}
+                            transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
+                          />
+                        </div>
+                      )}
                     </motion.div>
                   );
                 })}

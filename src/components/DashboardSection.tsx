@@ -8,7 +8,7 @@ const DashboardSection = () => {
         <div className="relative rounded-full">
           <div className="bg-muted/40 shadow-2xl overflow-hidden border border-border rounded-3xl" 
                style={{
-                 boxShadow: '0 0 80px rgba(100, 69, 245, 0.4), 0 0 160px rgba(100, 69, 245, 0.25), 0 0 240px rgba(100, 69, 245, 0.15)'
+                 boxShadow: '0 0 80px rgba(59, 130, 246, 0.4), 0 0 160px rgba(59, 130, 246, 0.25), 0 0 240px rgba(59, 130, 246, 0.15)'
                }}>
             <img 
               alt="Dashboard interface showing financial management tools" 

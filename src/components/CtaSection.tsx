@@ -2,7 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Zap } from "lucide-react";
 
 const CtaSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -55,13 +56,27 @@ const CtaSection = () => {
           onMouseLeave={() => setIsHovering(false)}
         >
           {/* Mouse follower spotlight effect */}
-          <div 
-            className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+          <motion.div
+            className="pointer-events-none absolute"
             style={{
-              background: isHovering 
-                ? `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(0,0,0,0.03), transparent 70%)`
-                : 'transparent',
+              width: 500,
+              height: 500,
+              top: -250,
+              left: -250,
+              background: `radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 40%, transparent 70%)`
+            }}
+            initial={{ opacity: 0 }}
+            animate={{
+              x: mousePosition.x,
+              y: mousePosition.y,
               opacity: isHovering ? 1 : 0
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              damping: 20,
+              mass: 0.5,
+              opacity: { duration: 0.3, ease: "easeInOut" }
             }}
           />
           
@@ -94,7 +109,7 @@ const CtaSection = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               variants={itemVariants}
             >
-              <motion.div
+              {/* <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -105,19 +120,49 @@ const CtaSection = () => {
                   Try for free
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </motion.div>
+              </motion.div> */}
               
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative group"
               >
                 <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="bg-transparent text-foreground border border-border hover:bg-muted hover:border-border/50 px-8 py-3 text-base font-medium rounded-lg backdrop-blur-sm"
+                  size="lg" 
+                  className="relative overflow-hidden text-white px-8 py-4 rounded-xl shadow-xl border-0 font-semibold text-lg transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, #3B82F6 0%, #1D4ED8 50%, #1E40AF 100%)',
+                    boxShadow: '0 10px 30px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                  }}
                 >
-                  Chat with sales
+                  {/* Animated background gradient */}
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  
+                  {/* Shimmer effect */}
+                  <div 
+                    className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  />
+                  
+                  <div className="relative z-10 flex items-center">
+                    <Zap className="mr-3 h-5 w-5 animate-pulse" />
+                    Join the Waitlist
+                    <motion.div
+                      className="ml-2"
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.div>
+                  </div>
                 </Button>
+                
+                {/* Glowing ring effect */}
+                <div 
+                  className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300 -z-10"
+                  style={{ transform: 'scale(1.1)' }}
+                />
               </motion.div>
             </motion.div>
           </motion.div>

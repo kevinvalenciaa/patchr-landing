@@ -29,9 +29,9 @@ const Index = () => {
       <div id="onboarding">
         <GetStartedSection />
       </div>
-      <div id="pricing">
+      {/* <div id="pricing">
         <AlternatePricingSection />
-      </div>
+      </div> */}
       <CtaSection />
       <Footer />
       </div>

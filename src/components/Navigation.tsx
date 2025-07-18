@@ -33,7 +33,7 @@ const Navigation = () => {
         <div className="flex items-center h-16 px-6">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <div className="text-foreground font-bold text-xl">Webfluin</div>
+              <div className="text-foreground font-bold text-xl">patchr.</div>
             </Link>
           </div>
           
@@ -59,18 +59,18 @@ const Navigation = () => {
             >
               Onboarding
             </a>
-            <a 
+            {/* <a 
               href="#pricing" 
               onClick={(e) => handleSmoothScroll(e, 'pricing')}
               className="text-foreground hover:text-foreground/80 transition-all duration-300 text-sm font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground/50 after:transition-all after:duration-300 hover:after:w-full"
             >
               Pricing
-            </a>
+            </a> */}
           </div>
           
           <div className="flex items-center space-x-3 ml-auto">
             <Button className="px-4 py-2.5 text-sm font-semibold leading-5 text-white rounded-xl font-sans" style={{
-              background: 'linear-gradient(180deg, #6445F5 0%, #4128BA 100%)'
+              background: 'linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%)'
             }}>
               Get Started
             </Button>

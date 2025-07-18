@@ -20,7 +20,7 @@ const AboutUs = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              About Webfluin
+              About patchr.
             </motion.h1>
             <motion.p 
               className="text-muted-foreground text-xl font-medium leading-[26px] mb-12 max-w-[600px] mx-auto"
@@ -55,7 +55,7 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Founded in 2024, Webfluin emerged from a simple observation: as AI becomes increasingly integrated into how people discover and interact with brands, traditional analytics tools weren't designed to capture this new reality.
+                Founded in 2024, patchr. emerged from a simple observation: as AI becomes increasingly integrated into how people discover and interact with brands, traditional analytics tools weren't designed to capture this new reality.
               </motion.p>
               <motion.p 
                 className="text-muted-foreground text-lg font-medium leading-[23.4px]"
@@ -98,7 +98,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              The principles that guide everything we do at Webfluin
+              The principles that guide everything we do at patchr.
             </motion.p>
           </div>
 
@@ -190,7 +190,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              The passionate experts behind Webfluin's innovative AI analytics platform
+              The passionate experts behind patchr.'s innovative AI analytics platform
             </motion.p>
           </div>
 
@@ -274,7 +274,7 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Join the brands already using Webfluin to understand their AI presence and optimize for the future.
+            Join the brands already using patchr. to understand their AI presence and optimize for the future.
           </motion.p>
           <div className="flex gap-4 justify-center">
             <Button variant="default" className="bg-foreground text-background hover:bg-foreground/90 px-6 py-2 rounded-lg">
