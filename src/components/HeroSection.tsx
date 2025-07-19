@@ -68,8 +68,8 @@ const HeroSection = () => {
                 size="lg" 
                 className="relative overflow-hidden text-white px-8 py-4 rounded-xl shadow-xl border-0 font-semibold text-lg transition-all duration-300"
                 style={{
-                  background: 'linear-gradient(135deg, #3B82F6 0%, #1D4ED8 50%, #1E40AF 100%)',
-                  boxShadow: '0 10px 30px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                  background: 'linear-gradient(135deg, #1D4ED8 0%, #1D4ED8 50%, #1E40AF 100%)',
+                  boxShadow: '0 10px 30px rgba(29, 78, 216, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
                 }}
               >
                 {/* Animated background gradient */}

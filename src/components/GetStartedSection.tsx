@@ -131,7 +131,7 @@ const GetStartedSection = () => {
                         <div className="absolute bottom-0 left-0 right-0 h-1 bg-muted/30 rounded-b-lg overflow-hidden">
                           <motion.div
                             key={selectedFeature}
-                            className="h-full bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] rounded-b-lg"
+                            className="h-full bg-gradient-to-r from-[#1D4ED8] to-[#1D4ED8] rounded-b-lg"
                             initial={{ width: "0%" }}
                             animate={{ width: "100%" }}
                             transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}

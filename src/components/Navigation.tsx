@@ -102,7 +102,8 @@ const Navigation = () => {
             <Button
               className="px-4 py-2.5 text-sm font-semibold text-white rounded-xl"
               style={{
-                background: "linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%)",
+                background: "linear-gradient(180deg, #1D4ED8 0%, #1D4ED8 100%)",
+                boxShadow: '0 10px 30px rgba(29, 78, 216, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
               }}
             >
               Get Started
