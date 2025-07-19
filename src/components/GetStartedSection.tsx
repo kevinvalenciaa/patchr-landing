@@ -44,7 +44,7 @@ const GetStartedSection = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Get started in minutes
+            Get started in minutes.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Experience the power of a fully automated front desk with our white-glove onboarding process designed to get you up and running quickly.

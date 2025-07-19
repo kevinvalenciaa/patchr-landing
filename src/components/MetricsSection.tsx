@@ -6,19 +6,19 @@ const MetricsSection = () => {
   const metrics = [
     {
       value: 40,
-      suffix: "%+",
-      description: "Of Customer Calls Missed"
+      suffix: "%",
+      description: "of customer calls are missed on average."
     }, 
     {
       value: 10,
       suffix: "+",
-      description: "Hours Saved Weekly on Admin & Phone Tag"
+      description: "hours saved weekly on admin and phone tag."
     }, 
     {
       value: 8000,
       prefix: "$",
       suffix: "+",
-      description: "In Potential Monthly Revenue Captured"
+      description: "in potential monthly revenue captured."
     }
   ];
 

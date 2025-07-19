@@ -102,7 +102,7 @@ const CtaSection = () => {
               className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Join hundreds of contractors already using our platform to capture more leads and grow their business.
+              Join dozens of contractors already using our platform to capture more leads and grow their business.
             </motion.p>
             
             <motion.div 
