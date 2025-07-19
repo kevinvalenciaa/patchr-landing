@@ -40,9 +40,9 @@ const Navigation = () => {
       }`}>
         <div className="flex items-center h-16 px-6">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <div className="flex items-center space-x-3">
               <div className="text-foreground font-bold text-xl">patchr.</div>
-            </Link>
+            </div>
           </div>
           
           <div className="hidden md:flex items-center space-x-8 ml-12">

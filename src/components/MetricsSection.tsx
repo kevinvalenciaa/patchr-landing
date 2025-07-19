@@ -1,19 +1,24 @@
 
 import { motion } from "framer-motion";
+import { NumberTicker } from "@/components/ui/number-ticker";
 
 const MetricsSection = () => {
   const metrics = [
     {
-      number: "160+",
-      description: "Our software is used by people in over 160 countries worldwide."
+      value: 40,
+      suffix: "%+",
+      description: "Of Customer Calls Missed"
     }, 
     {
-      number: "$7000",
-      description: "Save $7000 in billable hours each year with our innovative solutions."
+      value: 10,
+      suffix: "+",
+      description: "Hours Saved Weekly on Admin & Phone Tag"
     }, 
     {
-      number: "30M+",
-      description: "More than 30 million businesses have benefited from our services."
+      value: 8000,
+      prefix: "$",
+      suffix: "+",
+      description: "In Potential Monthly Revenue Captured"
     }
   ];
 
@@ -56,7 +61,13 @@ const MetricsSection = () => {
               variants={itemVariants}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                {metric.number}
+                {metric.prefix && <span>{metric.prefix}</span>}
+                <NumberTicker
+                  value={metric.value}
+                  className="text-foreground"
+                  delay={index * 0.2}
+                />
+                {metric.suffix && <span>{metric.suffix}</span>}
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">
                 {metric.description}
