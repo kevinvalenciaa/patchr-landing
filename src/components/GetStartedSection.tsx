@@ -1,46 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Sparkles, Grid3x3, Code, Zap, Timer } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const GetStartedSection = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isInView, setIsInView] = useState(false);
   
   const STEP_DURATION = 6000; // 6 seconds per step
 
   const features = [
     {
       icon: Sparkles,
-      title: "AI-Powered Brand Intelligence",
-      description: "Advanced algorithms analyze your brand's AI presence across multiple platforms and channels",
+      title: "Tell Us About Your Business",
+      description: "Fill out a simple form with your company name, the services you offer, and your primary service area.",
       image: "/lovable-uploads/cefc339e-1b57-499b-be6b-fc6405d707a3.png"
     },
     {
       icon: Grid3x3,
-      title: "Comprehensive Analytics Dashboard", 
-      description: "Real-time insights and metrics to track your brand's performance in AI-generated content",
+      title: "Connect Your Calendar", 
+      description: "We'll send a permission request to your email (e.g., Google Calendar). Just click \"Allow\" and you're set.",
       image: "/lovable-uploads/8212efc3-9d25-4b5d-a856-32f10dc0abff.png"
     },
     {
       icon: Code,
-      title: "Smart Optimization System",
-      description: "Intelligent recommendations to improve your brand's visibility and sentiment in AI responses",
+      title: "We Build Your AI",
+      description: "Our team personally configures your AI receptionist, training it on your business hours, services, and ideal scheduling.",
       image: "/lovable-uploads/7d7505ec-772e-4b00-b619-d37f22301b0c.png"
     },
     {
       icon: Zap,
-      title: "Lightning Fast Implementation",
-      description: "Get up and running in minutes with our streamlined onboarding and automated setup process",
+      title: "You Get Booked Jobs",
+      description: "That's it. Your line is now protected by patchr. The next time you miss a call, you'll get an SMS with a newly booked job.",
       image: "/lovable-uploads/f34b8c76-b7ef-449b-a865-e696160e3132.png"
     }
   ];
 
-  // The interval-based useEffect has been removed in favor of onAnimationComplete
-
   const handleFeatureSelect = (index: number) => {
     setSelectedFeature(index);
-    // The auto-play pause has been removed to allow continuous cycling.
   };
 
   return (
@@ -52,7 +47,7 @@ const GetStartedSection = () => {
             Get Started in Minutes
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experience the power of AI-driven brand intelligence with our comprehensive onboarding process designed to get you up and running quickly.
+            Experience the power of a fully automated front desk with our white-glove onboarding process designed to get you up and running quickly.
           </p>
         </div>
 
@@ -61,9 +56,7 @@ const GetStartedSection = () => {
           className="bg-background border border-border rounded-lg overflow-hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          onViewportEnter={() => setIsInView(true)}
-          onViewportLeave={() => setIsInView(false)}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <div className="flex flex-col lg:flex-row min-h-[600px]">
             {/* Left side - Feature list */}
@@ -143,9 +136,7 @@ const GetStartedSection = () => {
                             animate={{ width: "100%" }}
                             transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
                             onAnimationComplete={() => {
-                              if (isAutoPlaying && isInView) {
-                                setSelectedFeature((prev) => (prev + 1) % features.length);
-                              }
+                              setSelectedFeature((prev) => (prev + 1) % features.length);
                             }}
                           />
                         </div>
