@@ -11,9 +11,9 @@ const DashboardSection = () => {
                  boxShadow: '0 0 80px rgba(59, 130, 246, 0.4), 0 0 160px rgba(59, 130, 246, 0.25), 0 0 240px rgba(59, 130, 246, 0.15)'
                }}>
             <img 
-              alt="Dashboard interface showing financial management tools" 
+              alt="John's Dashboard showing patchr. sales and customer analytics" 
               className="w-full h-auto object-cover object-top" 
-              src="/lovable-uploads/d6c89680-1f12-4034-858c-dffeb2ad0b24.png"
+              src="/Dashboard Design.jpg"
             />
           </div>
         </div>
