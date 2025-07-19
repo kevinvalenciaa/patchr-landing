@@ -10,7 +10,7 @@ const AiPresenceSection = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            It's Not Software. It's a Better Way to Work.
+            It's not software. It's a better way to work.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Leverage our AI to handle your front desk, giving you back time, revenue, and peace of mind.
@@ -58,7 +58,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    Never Lose a Lead Again
+                    Never lose a lead again
                   </motion.h3>
                   <motion.p 
                     className="text-muted-foreground text-lg font-medium leading-[23.4px]"
@@ -103,7 +103,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    Get Your Time Back
+                    Get your time back
                   </motion.h3>
                   <motion.p 
                     className="text-muted-foreground text-lg font-medium leading-[23.4px]"
@@ -217,7 +217,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    Work Smarter, Not Harder
+                    Work smarter, not harder
                   </motion.h3>
                   <motion.p 
                     className="text-muted-foreground text-lg font-medium leading-[23.4px]"
