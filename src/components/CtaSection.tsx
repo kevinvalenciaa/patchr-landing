@@ -6,16 +6,16 @@ import { useState, useEffect } from "react";
 import { Zap } from "lucide-react";
 
 const CtaSection = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
+  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   const rect = e.currentTarget.getBoundingClientRect();
+  //   setMousePosition({
+  //     x: e.clientX - rect.left,
+  //     y: e.clientY - rect.top,
+  //   });
+  // };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,12 +51,12 @@ const CtaSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          onMouseMove={handleMouseMove}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
+          // onMouseMove={handleMouseMove}
+          // onMouseEnter={() => setIsHovering(true)}
+          // onMouseLeave={() => setIsHovering(false)}
         >
           {/* Mouse follower spotlight effect */}
-          <motion.div
+          {/* <motion.div
             className="pointer-events-none absolute"
             style={{
               width: 500,
@@ -78,7 +78,7 @@ const CtaSection = () => {
               mass: 0.5,
               opacity: { duration: 0.3, ease: "easeInOut" }
             }}
-          />
+          /> */}
           
           {/* Glass effect overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-transparent to-muted/5 rounded-2xl"></div>

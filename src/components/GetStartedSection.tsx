@@ -61,7 +61,7 @@ const GetStartedSection = () => {
           <div className="flex flex-col lg:flex-row min-h-[600px]">
             {/* Left side - Feature list */}
             <div className="w-full lg:w-1/2 p-8 lg:p-12">
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -78,7 +78,7 @@ const GetStartedSection = () => {
                   Experience comprehensive brand monitoring with AI-powered tools and 
                   analytics designed for modern businesses and brands.
                 </p>
-              </motion.div>
+              </motion.div> */}
 
               <div className="space-y-6">
                 {features.map((feature, index) => {
