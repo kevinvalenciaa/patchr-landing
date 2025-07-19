@@ -40,15 +40,14 @@ const HeroSection = () => {
             className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight"
             variants={itemVariants}
           >
-            Better insights. Zero friction.{" "}
-            <span className="block">Integrated experience.</span>
+            Turn Missed Calls into Booked Jobs. Automatically.
           </motion.h1>
           
           <motion.p 
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Intelligent billing, streamlined project tracking, and unified business operations — everything in one platform.
+            Use AI to answer every call 24/7, qualify every lead, and book jobs directly into your calendar. No app to manage, no missed opportunities.
           </motion.p>
           
           <motion.div 

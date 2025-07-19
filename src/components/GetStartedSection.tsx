@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Sparkles, Grid3x3, Code, Zap, Timer } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -6,7 +6,6 @@ const GetStartedSection = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isInView, setIsInView] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   
   const STEP_DURATION = 6000; // 6 seconds per step
 
@@ -37,29 +36,7 @@ const GetStartedSection = () => {
     }
   ];
 
-  // Auto-progress through features
-  useEffect(() => {
-    if (!isAutoPlaying || !isInView) return;
-
-    // By re-running this effect when `selectedFeature` changes, we effectively
-    // reset the timer, ensuring a seamless transition to the next step after the duration.
-    if (intervalRef.current) clearInterval(intervalRef.current);
-
-    intervalRef.current = setInterval(() => {
-      setSelectedFeature((prev) => (prev + 1) % features.length);
-    }, STEP_DURATION);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [isAutoPlaying, isInView, features.length, selectedFeature]);
-
-  // Clean up on unmount
-  useEffect(() => {
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, []);
+  // The interval-based useEffect has been removed in favor of onAnimationComplete
 
   const handleFeatureSelect = (index: number) => {
     setSelectedFeature(index);
@@ -165,6 +142,11 @@ const GetStartedSection = () => {
                             initial={{ width: "0%" }}
                             animate={{ width: "100%" }}
                             transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
+                            onAnimationComplete={() => {
+                              if (isAutoPlaying && isInView) {
+                                setSelectedFeature((prev) => (prev + 1) % features.length);
+                              }
+                            }}
                           />
                         </div>
                       )}
@@ -175,7 +157,7 @@ const GetStartedSection = () => {
             </div>
             
             {/* Right Side - Feature Image */}
-            <div className="w-full lg:w-1/2 relative bg-muted border-l border-border flex items-center justify-center p-8">
+            <div className="w-full lg:w-1/2 relative bg-muted/40 border-l border-border flex items-center justify-center p-8">
             <AnimatePresence mode="wait">
                 <motion.div
                   className="relative w-full h-full flex items-center justify-center"

@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navigation = () => {
+  const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -23,6 +27,10 @@ const Navigation = () => {
         block: 'start',
       });
     }
+  };
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (
@@ -68,10 +76,35 @@ const Navigation = () => {
             </a> */}
           </div>
           
-          <div className="flex items-center space-x-3 ml-auto">
-            <Button className="px-4 py-2.5 text-sm font-semibold leading-5 text-white rounded-xl font-sans" style={{
-              background: 'linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%)'
-            }}>
+          <div className="flex items-center space-x-4 ml-auto">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleThemeSwitch}
+              className="rounded-full"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={theme}
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {theme === "dark" ? (
+                    <Moon className="h-5 w-5" />
+                  ) : (
+                    <Sun className="h-5 w-5" />
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            </Button>
+            <Button
+              className="px-4 py-2.5 text-sm font-semibold text-white rounded-xl"
+              style={{
+                background: "linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%)",
+              }}
+            >
               Get Started
             </Button>
           </div>

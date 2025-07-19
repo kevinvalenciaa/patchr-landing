@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 const FeatureSection = () => {
   const features = [
     {
-      title: "Customizable Dashboard",
-      description: "Design a dashboard that highlights the financial data most important to your business.",
+      title: "24/7 AI Voice Receptionist",
+      description: "Your phone is answered every time, day or night. Our AI is trained on trade-specific language to handle customer inquiries, answer FAQs about your services, and provide a professional first impression.",
       image: "/lovable-uploads/f34b8c76-b7ef-449b-a865-e696160e3132.png"
     }, 
     {
-      title: "Smart Analytics",
-      description: "Get insights into your financial performance with our advanced analytics tools.",
+      title: "Outbound Missed Call Follow-Up",
+      description: "Never worry about a mystery missed call again. If a call doesn't connect, your patchr. agent automatically calls the number back within minutes to secure the lead before they can call a competitor.",
       image: "/lovable-uploads/a4d6f5bb-d27b-496a-8738-9da9e145ff67.png"
     }, 
     {
-      title: "Automated Workflows",
-      description: "Streamline your processes with intelligent automation that saves time and reduces errors.",
+      title: "Automated Job Scheduling",
+      description: "Once a lead is qualified, patchr. finds an open slot and books the appointment directly into the calendar you already use (Google, Apple, etc.). No more manual entry or double-booking.",
       image: "/lovable-uploads/d7548ea8-ab44-4e01-b366-5b1b24af72df.png"
     }, 
     {
-      title: "Real-time Collaboration",
-      description: "Work together seamlessly with your team in real-time across all your projects.",
+      title: "Instant SMS & Calendar Updates",
+      description: "The entire system works through text messages and your calendar. Get new job details, addresses, and customer notes pushed directly to your phone.",
       image: "/lovable-uploads/ffcae411-32b8-4bd7-882e-5dcef6326338.png"
     }
   ];
@@ -67,10 +67,10 @@ const FeatureSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Stay in control, work smarter
+            Focus on the job, not your phone.
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Powerful tools to manage your finances effortlessly, so you can focus on what matters.
+            Powerful, invisible tools to manage your customer calls effortlessly, so you can focus on what matters.
           </p>
         </motion.div>
         
