@@ -40,7 +40,7 @@ const HeroSection = () => {
             className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight"
             variants={itemVariants}
           >
-            Turn missed calls into booked jobs. Automatically.
+            Automatically turn missed calls into booked jobs.
           </motion.h1>
           
           <motion.p 
