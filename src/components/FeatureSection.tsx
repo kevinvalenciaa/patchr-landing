@@ -95,60 +95,52 @@ const FeatureSection = () => {
                     <div className="flex items-start justify-center h-full">
                       <div className="w-full max-w-sm h-full">
                         <AnimatedList delay={2000} className="w-full h-full pt-4">
-                          <div key="event1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                          <div key="job1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                             <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
+                              <span className="text-white text-lg">💼</span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">New event</h4>
-                                <span className="text-xs text-gray-500 ml-2">2m ago</span>
+                                <h4 className="text-sm font-semibold text-gray-900 truncate">New Job Booked</h4>
+                                <span className="text-xs text-gray-500 ml-2">Just now</span>
                               </div>
-                              <p className="text-sm text-gray-600 mt-1">patchr.</p>
+                              <p className="text-sm text-gray-600 mt-1">John S. (Leaky faucet) – Jul 17 @ 2:00 PM</p>
                             </div>
                           </div>
-                          <div key="message1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3">
-                            <div className="w-12 h-12 bg-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                              </svg>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">New message</h4>
-                                <span className="text-xs text-gray-500 ml-2">5m ago</span>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">patchr.</p>
-                            </div>
-                          </div>
-                          <div key="signup1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3">
-                            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                              </svg>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">User signed up</h4>
-                                <span className="text-xs text-gray-500 ml-2">10m ago</span>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">patchr.</p>
-                            </div>
-                          </div>
-                          <div key="payment1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3">
+                          <div key="lead1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                             <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                              </svg>
+                              <span className="text-white text-lg">📥</span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">Payment received</h4>
-                                <span className="text-xs text-gray-500 ml-2">15m ago</span>
+                                <h4 className="text-sm font-semibold text-gray-900 truncate">New Inbound Lead</h4>
+                                <span className="text-xs text-gray-500 ml-2">Just now</span>
                               </div>
-                              <p className="text-sm text-gray-600 mt-1">patchr.</p>
+                              <p className="text-sm text-gray-600 mt-1">Rachel L. – Plumbing estimate request</p>
+                            </div>
+                          </div>
+                          <div key="calendar1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                            <div className="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-lg">📆</span>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <h4 className="text-sm font-semibold text-gray-900 truncate">New Calendar Event Added</h4>
+                                <span className="text-xs text-gray-500 ml-2">Just now</span>
+                              </div>
+                              <p className="text-sm text-gray-600 mt-1">Sarah Lee (Water heater) – Jul 19 @ 10 AM</p>
+                            </div>
+                          </div>
+                          <div key="completed1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                            <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-lg">✅</span>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <h4 className="text-sm font-semibold text-gray-900 truncate">Completed Job</h4>
+                                <span className="text-xs text-gray-500 ml-2">Just now</span>
+                              </div>
+                              <p className="text-sm text-gray-600 mt-1">Emily C. (Furnace check) – Jul 21 @ 9:30 AM</p>
                             </div>
                           </div>
                         </AnimatedList>

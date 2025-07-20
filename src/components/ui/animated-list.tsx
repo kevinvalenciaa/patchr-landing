@@ -31,27 +31,27 @@ export interface AnimatedListProps extends ComponentPropsWithoutRef<"div"> {
 
 export const AnimatedList = React.memo(
   ({ children, className, delay = 1000, ...props }: AnimatedListProps) => {
-    const [index, setIndex] = useState(0);
+    const [items, setItems] = useState<React.ReactElement[]>([]);
     const childrenArray = useMemo(
-      () => React.Children.toArray(children),
+      () => React.Children.toArray(children) as React.ReactElement[],
       [children],
     );
 
     useEffect(() => {
-      if (index < childrenArray.length - 1) {
-        const timeout = setTimeout(() => {
-          setIndex((prevIndex) => (prevIndex + 1) % childrenArray.length);
-        }, delay);
+      const timeout = setTimeout(() => {
+        const nextItemIndex = items.length % childrenArray.length;
+        const nextItem = childrenArray[nextItemIndex];
+        
+        // Clone the element with a unique key based on the current timestamp
+        const newItem = React.cloneElement(nextItem, {
+          key: `${nextItem.key}-${Date.now()}`,
+        });
+        
+        setItems((prevItems) => [newItem, ...prevItems]);
+      }, delay);
 
-        return () => clearTimeout(timeout);
-      }
-    }, [index, delay, childrenArray.length]);
-
-    const itemsToShow = useMemo(() => {
-      // Reverse the slice to show newest items first (at the top)
-      const result = childrenArray.slice(0, index + 1).reverse();
-      return result;
-    }, [index, childrenArray]);
+      return () => clearTimeout(timeout);
+    }, [items, delay, childrenArray]);
 
     // Always show the fade-out mask for a smooth transition
     const containerStyle = {
@@ -66,8 +66,8 @@ export const AnimatedList = React.memo(
         {...props}
       >
         <AnimatePresence>
-          {itemsToShow.map((item) => (
-            <AnimatedListItem key={(item as React.ReactElement).key}>
+          {items.map((item) => (
+            <AnimatedListItem key={item.key}>
               {item}
             </AnimatedListItem>
           ))}
