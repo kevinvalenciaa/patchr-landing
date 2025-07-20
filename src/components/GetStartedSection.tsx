@@ -11,25 +11,25 @@ const GetStartedSection = () => {
     {
       icon: Sparkles,
       title: "Tell Us About Your Business",
-      description: "Fill out a simple form with your company name, the services you offer, and your primary service area.",
+      description: "Just your company name, services (HVAC, plumbing, electrical), and service area. That's it.",
       image: "/lovable-uploads/cefc339e-1b57-499b-be6b-fc6405d707a3.png"
     },
     {
       icon: Grid3x3,
       title: "Connect Your Calendar", 
-      description: "We'll send a permission request to your email (e.g., Google Calendar). Just click \"Allow\" and you're set.",
+      description: "We'll send you a simple link to connect your Google Calendar. One click and you're done.",
       image: "/lovable-uploads/8212efc3-9d25-4b5d-a856-32f10dc0abff.png"
     },
     {
       icon: Code,
-      title: "We Build Your AI",
-      description: "Our team personally configures your AI receptionist, training it on your business hours, services, and ideal scheduling.",
+      title: "We Set Up Everything Else",
+      description: "Our team handles the technical stuff—AI training, phone setup, calendar sync. You don't lift a finger.",
       image: "/lovable-uploads/7d7505ec-772e-4b00-b619-d37f22301b0c.png"
     },
     {
       icon: Zap,
-      title: "You Get Booked Jobs",
-      description: "That's it. Your line is now protected by patchr. The next time you miss a call, you'll get an SMS with a newly booked job.",
+      title: "Start Getting Booked Jobs",
+      description: "Your line is now protected by AI. Next missed call becomes a text message with a booked appointment.",
       image: "/lovable-uploads/f34b8c76-b7ef-449b-a865-e696160e3132.png"
     }
   ];
@@ -44,10 +44,10 @@ const GetStartedSection = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Get started in minutes.
+            Set up in minutes, not hours.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experience the power of a fully automated front desk with our white-glove onboarding process designed to get you up and running quickly.
+            We handle the technical setup for you. Just give us your info and you're protecting every call within 15 minutes.
           </p>
         </div>
 

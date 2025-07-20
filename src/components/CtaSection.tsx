@@ -101,14 +101,14 @@ const CtaSection = () => {
               className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight"
               variants={itemVariants}
             >
-              Ready to get started?
+              Ready to stop missing jobs?
             </motion.h2>
             
             <motion.p 
               className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Join dozens of contractors already using our platform to capture more leads and grow their business.
+              Join hundreds of contractors already using patchr. to capture every call and grow their business—without changing how they work.
             </motion.p>
             
             <motion.div 

@@ -10,10 +10,10 @@ const AiPresenceSection = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            It's not software. It's a better way to work.
+            It's not software. It's your invisible assistant.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Leverage our AI to handle your front desk, giving you back time, revenue, and peace of mind.
+            Works seamlessly with your existing tools—SMS and calendar—so you get more jobs without changing how you work.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    Never lose a lead again
+                    Never lose a job again
                   </motion.h3>
                   <motion.p 
                     className="text-muted-foreground text-lg font-medium leading-[23.4px]"
@@ -67,7 +67,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    Capture every opportunity with 24/7 call answering, impress customers with professional service, and beat your competition to the job.
+                    Every call gets answered professionally, even when you're under a sink or in an attic. Customers get instant responses and you get booked jobs.
                   </motion.p>
                 </div>
 
@@ -75,15 +75,15 @@ const AiPresenceSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <Zap size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">24/7 opportunity capture</span>
+                    <span className="text-foreground text-base font-medium">24/7 professional call answering</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Zap size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">Instant professional response</span>
+                    <span className="text-foreground text-base font-medium">Instant customer response</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Zap size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">Outbound lead follow-up</span>
+                    <span className="text-foreground text-base font-medium">Automatic missed call follow-up</span>
                   </div>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    Get your time back
+                    Focus on the work, not the phone
                   </motion.h3>
                   <motion.p 
                     className="text-muted-foreground text-lg font-medium leading-[23.4px]"
@@ -112,7 +112,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    Eliminate hours of admin work, focus completely on the job at hand, and end your workday without a long list of voicemails to return.
+                    No more stopping mid-job to answer calls or returning voicemails at night. Your AI handles everything while you stay productive.
                   </motion.p>
                 </div>
 
@@ -120,15 +120,15 @@ const AiPresenceSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <Globe size={20} className="text-[#797BEC] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">No more phone tag</span>
+                    <span className="text-foreground text-base font-medium">No more jobsite interruptions</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Bell size={20} className="text-[#797BEC] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">Zero jobsite interruptions</span>
+                    <span className="text-foreground text-base font-medium">Zero evening callbacks</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <TrendingUp size={20} className="text-[#797BEC] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">Reclaim your evenings</span>
+                    <span className="text-foreground text-base font-medium">More productive workdays</span>
                   </div>
                 </div>
               </div>
@@ -217,7 +217,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    Work smarter, not harder
+                    Works with what you already use
                   </motion.h3>
                   <motion.p 
                     className="text-muted-foreground text-lg font-medium leading-[23.4px]"
@@ -226,7 +226,7 @@ const AiPresenceSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    Run your business from the tools you already use, get job details pushed to you automatically, and see your week get booked without lifting a finger.
+                    Uses your existing phone number, calendar, and texting. Jobs appear in your calendar automatically—no new apps or logins required.
                   </motion.p>
                 </div>
 
@@ -234,15 +234,15 @@ const AiPresenceSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <BarChart3 size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">Works with SMS & your calendar</span>
+                    <span className="text-foreground text-base font-medium">Syncs with your current calendar</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Bell size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">No new apps to learn</span>
+                    <span className="text-foreground text-base font-medium">SMS notifications to your phone</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <MousePointer size={20} className="text-[#EB894C] flex-shrink-0" />
-                    <span className="text-foreground text-base font-medium">Automated organization</span>
+                    <span className="text-foreground text-base font-medium">Uses your existing phone number</span>
                   </div>
                 </div>
               </div>

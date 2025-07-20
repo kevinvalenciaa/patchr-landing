@@ -45,14 +45,14 @@ const HeroSection = () => {
             className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight"
             variants={itemVariants}
           >
-            Automatically turn missed calls into booked jobs.
+            Never miss another job while you're on the tools.
           </motion.h1>
           
           <motion.p 
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Use AI to answer every call 24/7, qualify every lead, and book jobs directly into your calendar. No app to manage, no missed opportunities.
+            AI receptionist handles your calls 24/7, books jobs directly into your calendar, and sends you SMS updates. No app to learn, no logins required—just more booked jobs.
           </motion.p>
           
           <motion.div 

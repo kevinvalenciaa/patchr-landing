@@ -7,23 +7,23 @@ import Timeline from "./ui/timeline";
 const FeatureSection = () => {
   const features = [
     {
-      title: "24/7 AI Voice Receptionist",
-      description: "Your phone is answered every time, day or night. Our AI is trained on trade-specific language to handle customer inquiries, answer FAQs about your services, and provide a professional first impression.",
+      title: "24/7 AI Phone Receptionist",
+      description: "Your phone is answered every time—day, night, weekends. Trained on HVAC, plumbing, and electrical language to handle customer questions professionally while you're working.",
       image: "/lovable-uploads/f34b8c76-b7ef-449b-a865-e696160e3132.png"
     }, 
     {
-      title: "Outbound Missed Call Follow-Up",
-      description: "Never worry about a mystery missed call again. If a call doesn't connect, your patchr. agent automatically calls the number back within minutes to secure the lead before they can call a competitor.",
+      title: "Missed Call Follow-Up",
+      description: "If someone hangs up or you miss a call on the job, patchr. automatically calls them back within minutes to secure the work before they call your competition.",
       image: "/lovable-uploads/a4d6f5bb-d27b-496a-8738-9da9e145ff67.png"
     }, 
     {
-      title: "Automated Job Scheduling",
-      description: "Once a lead is qualified, patchr. finds an open slot and books the appointment directly into the calendar you already use (Google, Apple, etc.). No more manual entry or double-booking.",
+      title: "Direct Calendar Booking",
+      description: "Jobs get booked straight into your Google Calendar with all the details—address, issue, customer notes. No apps to check, no manual entry required.",
       image: "/lovable-uploads/d7548ea8-ab44-4e01-b366-5b1b24af72df.png"
     }, 
     {
       title: "Instant SMS & Calendar Updates",
-      description: "The entire system works through text messages and your calendar. Get new job details, addresses, and customer notes pushed directly to your phone.",
+      description: "Get job details texted to your phone the moment they're booked. Everything syncs to your existing calendar—no new software to learn or passwords to remember.",
       image: "/lovable-uploads/ffcae411-32b8-4bd7-882e-5dcef6326338.png"
     }
   ];
@@ -69,10 +69,10 @@ const FeatureSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Focus on the job, not your phone.
+            Stay focused on the job, not your phone.
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Powerful, invisible tools to manage your customer calls effortlessly, so you can focus on what matters.
+            Works invisibly in the background while you're installing, repairing, or on-site. Zero setup, zero learning curve.
           </p>
         </motion.div>
         
@@ -95,50 +95,50 @@ const FeatureSection = () => {
                     <div className="flex items-start justify-center h-full">
                       <div className="w-full max-w-sm h-full">
                         <AnimatedList delay={2000} className="w-full h-full pt-4">
-                          <div key="job1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                          <div key="job1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                             <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                               <span className="text-white text-lg">💼</span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center justify-between">
                                 <h4 className="text-sm font-semibold text-gray-900 truncate">New Job Booked</h4>
-                                <span className="text-xs text-gray-500 ml-2">Just now</span>
+                                <span className="text-xs text-gray-500 ml-2">2m ago</span>
                               </div>
-                              <p className="text-sm text-gray-600 mt-1">John S. (Leaky faucet) – Jul 17 @ 2:00 PM</p>
+                              <p className="text-sm text-gray-600 mt-1">John Smith (Leaky faucet) – Jul 17 @ 2:00 PM</p>
                             </div>
                           </div>
-                          <div key="lead1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                          <div key="lead1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                             <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                               <span className="text-white text-lg">📥</span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center justify-between">
                                 <h4 className="text-sm font-semibold text-gray-900 truncate">New Inbound Lead</h4>
-                                <span className="text-xs text-gray-500 ml-2">Just now</span>
+                                <span className="text-xs text-gray-500 ml-2">5m ago</span>
                               </div>
                               <p className="text-sm text-gray-600 mt-1">Rachel L. – Plumbing estimate request</p>
                             </div>
                           </div>
-                          <div key="calendar1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                          <div key="calendar1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                             <div className="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                               <span className="text-white text-lg">📆</span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center justify-between">
                                 <h4 className="text-sm font-semibold text-gray-900 truncate">New Calendar Event Added</h4>
-                                <span className="text-xs text-gray-500 ml-2">Just now</span>
+                                <span className="text-xs text-gray-500 ml-2">10m ago</span>
                               </div>
                               <p className="text-sm text-gray-600 mt-1">Sarah Lee (Water heater) – Jul 19 @ 10 AM</p>
                             </div>
                           </div>
-                          <div key="completed1" className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                          <div key="completed1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                             <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                               <span className="text-white text-lg">✅</span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center justify-between">
                                 <h4 className="text-sm font-semibold text-gray-900 truncate">Completed Job</h4>
-                                <span className="text-xs text-gray-500 ml-2">Just now</span>
+                                <span className="text-xs text-gray-500 ml-2">15m ago</span>
                               </div>
                               <p className="text-sm text-gray-600 mt-1">Emily C. (Furnace check) – Jul 21 @ 9:30 AM</p>
                             </div>
@@ -146,7 +146,7 @@ const FeatureSection = () => {
                         </AnimatedList>
                       </div>
                     </div>
-                  ) : feature.title === "Automated Job Scheduling" ? (
+                  ) : feature.title === "Direct Calendar Booking" ? (
                     <div className="flex items-center justify-center h-full">
                       <Timeline />
                     </div>
