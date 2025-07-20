@@ -33,6 +33,14 @@ const Navigation = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
+  const openTypeform = () => {
+    // @ts-ignore - Typeform embed library
+    if (window.tf) {
+      // @ts-ignore
+      window.tf.createPopup('01K0JTVMRTG6346QN17EBT7YG8').open();
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
       <div className={`mx-auto transition-all duration-300 ease-in-out rounded-2xl bg-background/95 backdrop-blur-md border border-border shadow-lg ${
@@ -105,6 +113,7 @@ const Navigation = () => {
                 background: "linear-gradient(180deg, #1D4ED8 0%, #1E40AF 100%)",
                 boxShadow: '0 10px 30px rgba(29, 78, 216, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
               }}
+              onClick={openTypeform}
             >
               Get Started
             </Button>

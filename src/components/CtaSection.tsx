@@ -6,9 +6,18 @@ import { useState, useEffect } from "react";
 import { Zap } from "lucide-react";
 
 const CtaSection = () => {
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  // const [isHovering, setIsHovering] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  const openTypeform = () => {
+    // @ts-ignore - Typeform embed library
+    if (window.tf) {
+      // @ts-ignore
+      window.tf.createPopup('01K0JTVMRTG6346QN17EBT7YG8').open();
+    }
+  };
+
+  // Mouse tracking for potential future effects
   // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
   //   const rect = e.currentTarget.getBoundingClientRect();
   //   setMousePosition({
@@ -129,12 +138,16 @@ const CtaSection = () => {
               >
                 <Button 
                   size="lg" 
-                  className="relative overflow-hidden text-white px-8 py-4 rounded-xl shadow-xl border-0 font-semibold text-lg transition-all duration-300"
+                  className="group relative overflow-hidden rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 border-0"
                   style={{
-                    background: 'linear-gradient(135deg, #1D4ED8 0%, #1D4ED8 50%, #1E40AF 100%)',
+                    background: "linear-gradient(180deg, #1D4ED8 0%, #1E40AF 100%)",
                     boxShadow: '0 10px 30px rgba(29, 78, 216, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
                   }}
+                  onClick={openTypeform}
                 >
+                  {/* Static background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700" />
+                  
                   {/* Animated background gradient */}
                   <div 
                     className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
