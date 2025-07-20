@@ -34,11 +34,8 @@ const Navigation = () => {
   };
 
   const openTypeform = () => {
-    // @ts-ignore - Typeform embed library
-    if (window.tf) {
-      // @ts-ignore
-      window.tf.createPopup('01K0JTVMRTG6346QN17EBT7YG8').open();
-    }
+    // Open Typeform in a new tab
+    window.open('https://form.typeform.com/to/UON7KTNt', '_blank');
   };
 
   return (
