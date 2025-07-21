@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AnimatedList } from "./ui/animated-list";
 import Timeline from "./ui/timeline";
 import { Globe } from "./ui/globe";
+import ChatInterface from "./ui/chat-interface";
 
 const FeatureSection = () => {
   const features = [
@@ -176,6 +177,10 @@ const FeatureSection = () => {
                     ) : feature.title === "Direct Calendar Booking" ? (
                       <div className="flex items-center justify-center h-full">
                         <Timeline />
+                      </div>
+                    ) : feature.title === "24/7 AI Phone Receptionist" ? (
+                      <div className="flex items-center justify-center h-full">
+                        <ChatInterface />
                       </div>
                     ) : (
                       <img 
