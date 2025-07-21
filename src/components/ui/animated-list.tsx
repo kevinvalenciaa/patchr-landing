@@ -11,13 +11,18 @@ import React, {
 
 export function AnimatedListItem({ children }: { children: React.ReactNode }) {
   return (
-    <motion.div 
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1, originY: 0 }}
-      exit={{ scale: 0, opacity: 0 }}
-      transition={{ type: "spring" as const, stiffness: 350, damping: 40 }}
-      layout 
-      className="mx-auto w-full"
+    <motion.div
+      initial={{ opacity: 0, y: -50, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{
+        type: "spring" as const,
+        stiffness: 350,
+        damping: 35,
+        mass: 1
+      }}
+      layout
+      className="w-full"
     >
       {children}
     </motion.div>

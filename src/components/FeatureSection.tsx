@@ -122,7 +122,7 @@ const FeatureSection = () => {
                       <div className="flex items-start justify-center h-full">
                         <div className="w-full max-w-sm h-full">
                           <AnimatedList delay={2000} className="w-full h-full pt-4">
-                            <div key="job1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                            <div key="job1" className="bg-white rounded-2xl p-4 shadow-md border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                               <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                                 <span className="text-white text-lg">💼</span>
                               </div>
@@ -134,7 +134,7 @@ const FeatureSection = () => {
                                 <p className="text-sm text-gray-600 mt-1">John Smith (Leaky faucet) – Jul 17 @ 2:00 PM</p>
                               </div>
                             </div>
-                            <div key="lead1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                            <div key="lead1" className="bg-white rounded-2xl p-4 shadow-md border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                               <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                                 <span className="text-white text-lg">📥</span>
                               </div>
@@ -146,7 +146,7 @@ const FeatureSection = () => {
                                 <p className="text-sm text-gray-600 mt-1">Rachel L. – Plumbing estimate request</p>
                               </div>
                             </div>
-                            <div key="calendar1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                            <div key="calendar1" className="bg-white rounded-2xl p-4 shadow-md border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                               <div className="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                                 <span className="text-white text-lg">📆</span>
                               </div>
@@ -158,7 +158,7 @@ const FeatureSection = () => {
                                 <p className="text-sm text-gray-600 mt-1">Sarah Lee (Water heater) – Jul 19 @ 10 AM</p>
                               </div>
                             </div>
-                            <div key="completed1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                            <div key="completed1" className="bg-white rounded-2xl p-4 shadow-md border border-gray-100 flex items-center space-x-3 flex-shrink-0">
                               <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                                 <span className="text-white text-lg">✅</span>
                               </div>
