@@ -32,10 +32,10 @@ const FeatureSection = () => {
 
   // Border classes for each card position to create shared grid lines
   const cardBorders = [
-    "", // Top-left: no borders
-    "border-l border-border", // Top-right: left border only
-    "border-t border-border", // Bottom-left: top border only
-    "border-l border-t border-border" // Bottom-right: left and top borders
+    "border-b border-border", // Top-left
+    "border-l border-b border-border", // Top-right
+    "", // Bottom-left
+    "border-l border-border" // Bottom-right
   ];
 
   const containerVariants = {
@@ -88,6 +88,8 @@ const FeatureSection = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             {features.map((feature, index) => {
+              const borderClass = index === 2 ? "border-t border-border" : cardBorders[index];
+              
               if (feature.title === "Missed Call Follow-Up") {
                 return (
                   <div
@@ -116,7 +118,7 @@ const FeatureSection = () => {
               return (
                 <div 
                   key={index} 
-                  className={`flex flex-col justify-between h-full md:h-[450px] bg-muted/40 ${cardBorders[index]}`}
+                  className={`flex flex-col justify-between h-full md:h-[450px] bg-muted/40 ${borderClass}`}
                 >
                   <div className="h-80 md:h-full overflow-hidden bg-transparent p-4">
                     {feature.title === "Instant SMS & Calendar Updates" ? (
