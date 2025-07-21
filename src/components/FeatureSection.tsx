@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedList } from "./ui/animated-list";
 import Timeline from "./ui/timeline";
+import { Globe } from "./ui/globe";
 
 const FeatureSection = () => {
   const features = [
@@ -85,93 +86,120 @@ const FeatureSection = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {features.map((feature, index) => (
-              <div 
-                key={index} 
-                className={`flex flex-col justify-between h-full md:h-[450px] bg-muted/40 ${cardBorders[index]}`}
-              >
-                <div className="h-80 md:h-full overflow-hidden bg-transparent p-4">
-                  {feature.title === "Instant SMS & Calendar Updates" ? (
-                    <div className="flex items-start justify-center h-full">
-                      <div className="w-full max-w-sm h-full">
-                        <AnimatedList delay={2000} className="w-full h-full pt-4">
-                          <div key="job1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
-                            <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <span className="text-white text-lg">💼</span>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">New Job Booked</h4>
-                                <span className="text-xs text-gray-500 ml-2">2m ago</span>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">John Smith (Leaky faucet) – Jul 17 @ 2:00 PM</p>
-                            </div>
-                          </div>
-                          <div key="lead1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
-                            <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <span className="text-white text-lg">📥</span>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">New Inbound Lead</h4>
-                                <span className="text-xs text-gray-500 ml-2">5m ago</span>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">Rachel L. – Plumbing estimate request</p>
-                            </div>
-                          </div>
-                          <div key="calendar1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
-                            <div className="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <span className="text-white text-lg">📆</span>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">New Calendar Event Added</h4>
-                                <span className="text-xs text-gray-500 ml-2">10m ago</span>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">Sarah Lee (Water heater) – Jul 19 @ 10 AM</p>
-                            </div>
-                          </div>
-                          <div key="completed1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
-                            <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                              <span className="text-white text-lg">✅</span>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-gray-900 truncate">Completed Job</h4>
-                                <span className="text-xs text-gray-500 ml-2">15m ago</span>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">Emily C. (Furnace check) – Jul 21 @ 9:30 AM</p>
-                            </div>
-                          </div>
-                        </AnimatedList>
-                      </div>
+            {features.map((feature, index) => {
+              if (feature.title === "Missed Call Follow-Up") {
+                return (
+                  <div
+                    key={index}
+                    className={`relative flex flex-col justify-end h-full md:h-[450px] bg-muted/40 overflow-hidden ${cardBorders[index]}`}
+                  >
+                    <div className="absolute inset-x-0 bottom-0 mx-auto aspect-[1/1] w-full max-w-[600px] translate-y-[20%]">
+                      <Globe />
                     </div>
-                  ) : feature.title === "Direct Calendar Booking" ? (
-                    <div className="flex items-center justify-center h-full">
-                      <Timeline />
-                    </div>
-                  ) : (
-                    <img 
-                      src={feature.image} 
-                      alt={feature.title} 
-                      className="mt-4 mb-4 border-0" 
-                      style={{border: 'none', outline: 'none'}} 
-                    />
-                  )}
-                </div>
-                <motion.div 
-                  className="flex flex-col justify-end p-5 pb-5 pl-5 bg-transparent"
-                  variants={textVariants}
+                    <div className="absolute inset-0 bg-gradient-to-t from-muted via-muted/80 to-transparent pointer-events-none" />
+                    <motion.div
+                      className="relative z-10 p-5"
+                      variants={textVariants}
+                    >
+                      <h3 className="text-lg font-semibold text-foreground mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </motion.div>
+                  </div>
+                );
+              }
+
+              return (
+                <div 
+                  key={index} 
+                  className={`flex flex-col justify-between h-full md:h-[450px] bg-muted/40 ${cardBorders[index]}`}
                 >
-                  <h3 className="text-lg font-semibold text-foreground mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </motion.div>
-              </div>
-            ))}
+                  <div className="h-80 md:h-full overflow-hidden bg-transparent p-4">
+                    {feature.title === "Instant SMS & Calendar Updates" ? (
+                      <div className="flex items-start justify-center h-full">
+                        <div className="w-full max-w-sm h-full">
+                          <AnimatedList delay={2000} className="w-full h-full pt-4">
+                            <div key="job1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                              <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <span className="text-white text-lg">💼</span>
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between">
+                                  <h4 className="text-sm font-semibold text-gray-900 truncate">New Job Booked</h4>
+                                  <span className="text-xs text-gray-500 ml-2">2m ago</span>
+                                </div>
+                                <p className="text-sm text-gray-600 mt-1">John Smith (Leaky faucet) – Jul 17 @ 2:00 PM</p>
+                              </div>
+                            </div>
+                            <div key="lead1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                              <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <span className="text-white text-lg">📥</span>
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between">
+                                  <h4 className="text-sm font-semibold text-gray-900 truncate">New Inbound Lead</h4>
+                                  <span className="text-xs text-gray-500 ml-2">5m ago</span>
+                                </div>
+                                <p className="text-sm text-gray-600 mt-1">Rachel L. – Plumbing estimate request</p>
+                              </div>
+                            </div>
+                            <div key="calendar1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                              <div className="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <span className="text-white text-lg">📆</span>
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between">
+                                  <h4 className="text-sm font-semibold text-gray-900 truncate">New Calendar Event Added</h4>
+                                  <span className="text-xs text-gray-500 ml-2">10m ago</span>
+                                </div>
+                                <p className="text-sm text-gray-600 mt-1">Sarah Lee (Water heater) – Jul 19 @ 10 AM</p>
+                              </div>
+                            </div>
+                            <div key="completed1" className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex items-center space-x-3 flex-shrink-0">
+                              <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <span className="text-white text-lg">✅</span>
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between">
+                                  <h4 className="text-sm font-semibold text-gray-900 truncate">Completed Job</h4>
+                                  <span className="text-xs text-gray-500 ml-2">15m ago</span>
+                                </div>
+                                <p className="text-sm text-gray-600 mt-1">Emily C. (Furnace check) – Jul 21 @ 9:30 AM</p>
+                              </div>
+                            </div>
+                          </AnimatedList>
+                        </div>
+                      </div>
+                    ) : feature.title === "Direct Calendar Booking" ? (
+                      <div className="flex items-center justify-center h-full">
+                        <Timeline />
+                      </div>
+                    ) : (
+                      <img 
+                        src={feature.image} 
+                        alt={feature.title} 
+                        className="mt-4 mb-4 border-0" 
+                        style={{border: 'none', outline: 'none'}} 
+                      />
+                    )}
+                  </div>
+                  <motion.div 
+                    className="flex flex-col justify-end p-5 pb-5 pl-5 bg-transparent"
+                    variants={textVariants}
+                  >
+                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </motion.div>
+                </div>
+              );
+            })}
           </motion.div>
         </div>
       </div>
