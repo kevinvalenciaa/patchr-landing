@@ -23,17 +23,16 @@ const AiPresenceSection = () => {
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left Video - Female Specialist */}
               <div className="w-full lg:w-1/2 relative">
-                <div className="w-full h-[403px] flex items-center justify-center relative overflow-hidden p-12">
+                <div className="w-full h-[403px] flex items-center justify-center relative overflow-hidden p-8">
                   <video
-                    className="w-4/5 h-4/5 object-cover rounded-lg"
+                    className="w-full h-full object-contain rounded-lg"
                     src="/3d-isometric-female-specialist-working-in-support-service-1.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
                     style={{
-                      filter: 'hue-rotate(200deg) saturate(1.2) brightness(0.9)',
-                      mixBlendMode: 'multiply'
+                      filter: 'hue-rotate(180deg) saturate(2) brightness(0.8)',
                     }}
                   />
                 </div>
@@ -126,17 +125,16 @@ const AiPresenceSection = () => {
 
               {/* Right Video - Robot Assistant */}
               <div className="w-full lg:w-1/2 relative">
-                <div className="w-full h-[403px] flex items-center justify-center relative overflow-hidden p-12">
+                <div className="w-full h-[403px] flex items-center justify-center relative overflow-hidden p-8">
                   <video
-                    className="w-4/5 h-4/5 object-cover rounded-lg"
+                    className="w-full h-full object-contain rounded-lg"
                     src="/3d-isometric-robot-assistant-helping-developer-to-write-code.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
                     style={{
-                      filter: 'hue-rotate(200deg) saturate(1.2) brightness(0.9)',
-                      mixBlendMode: 'multiply'
+                      filter: 'hue-rotate(180deg) saturate(2) brightness(0.8)',
                     }}
                   />
                 </div>
@@ -149,9 +147,9 @@ const AiPresenceSection = () => {
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left Video - Project Management Team */}
               <div className="w-full lg:w-1/2 relative">
-                <div className="w-full h-[403px] flex items-center justify-center relative overflow-hidden p-12">
+                <div className="w-full h-[403px] flex items-center justify-center relative overflow-hidden p-8">
                   <video
-                    className="w-4/5 h-4/5 object-cover rounded-lg"
+                    className="w-full h-full object-contain rounded-lg"
                     src="/3d-techny-project-management-team-work-and-idea-generation.mp4"
                     autoPlay
                     loop
