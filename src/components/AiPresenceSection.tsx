@@ -32,7 +32,7 @@ const AiPresenceSection = () => {
                     muted
                     playsInline
                     style={{
-                      filter: 'hue-rotate(180deg) saturate(2) brightness(0.8)',
+                      filter: 'hue-rotate(140deg) saturate(1.5) contrast(1.1) brightness(1)',
                     }}
                   />
                 </div>
@@ -134,7 +134,7 @@ const AiPresenceSection = () => {
                     muted
                     playsInline
                     style={{
-                      filter: 'hue-rotate(180deg) saturate(2) brightness(0.8)',
+                      filter: 'hue-rotate(140deg) saturate(1.5) contrast(1.1) brightness(1)',
                     }}
                   />
                 </div>
