@@ -147,7 +147,7 @@ const GetStartedSection = () => {
               </div>
             </div>
             
-            {/* Right Side - Feature Image */}
+            {/* Right Side - Feature Graphics */}
             <div className="w-full lg:w-1/2 relative bg-muted/40 border-l border-border flex items-center justify-center p-8">
             <AnimatePresence mode="wait">
                 <motion.div
@@ -158,27 +158,149 @@ const GetStartedSection = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-
-                  {/* Feature image */}
+                  {/* Custom Graphics for each step */}
                   <motion.div 
-                    className="relative z-10 bg-muted/40 rounded-xl p-6 border border-border max-w-[80%]"
+                    className="relative z-10 flex items-center justify-center w-full h-full"
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
                   >
-                    <img 
-                      src={features[selectedFeature].image} 
-                      alt={features[selectedFeature].title}
-                      className="w-full h-auto rounded-lg"
-                    />
-                    <div className="mt-4 flex justify-center">
+                    {selectedFeature === 0 && (
+                      // Step 1: Business Info
+                      <div className="flex flex-col items-center">
+                        <div className="w-32 h-32 bg-[#1D4ED8] rounded-2xl flex items-center justify-center mb-6 relative">
+                          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-white">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-white">
+                              <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4 mb-4">
+                          <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                            <div className="text-xs text-gray-500 mb-1">Company</div>
+                            <div className="text-sm font-medium text-gray-800">HVAC Pro</div>
+                          </div>
+                          <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                            <div className="text-xs text-gray-500 mb-1">Service</div>
+                            <div className="text-sm font-medium text-gray-800">HVAC</div>
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 border border-gray-200 w-full text-center">
+                          <div className="text-xs text-gray-500 mb-1">Service Area</div>
+                          <div className="text-sm font-medium text-gray-800">Dallas, TX</div>
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedFeature === 1 && (
+                      // Step 2: Calendar Connection
+                      <div className="flex flex-col items-center">
+                        <div className="flex items-center space-x-6 mb-6">
+                          <div className="w-24 h-24 bg-[#1D4ED8] rounded-xl flex items-center justify-center">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
+                              <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="2"/>
+                              <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="2"/>
+                              <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
+                            </svg>
+                          </div>
+                          <div className="flex flex-col items-center">
+                            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-green-400 rounded mb-2">
+                              <div className="w-4 h-4 bg-green-400 rounded-full -mt-1.5 ml-12 animate-pulse"></div>
+                            </div>
+                            <div className="text-xs text-gray-500">Connecting...</div>
+                          </div>
+                          <div className="w-24 h-24 bg-green-500 rounded-xl flex items-center justify-center">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-4 border border-gray-200 text-center">
+                          <div className="text-green-600 font-semibold mb-1">✓ Google Calendar Connected</div>
+                          <div className="text-xs text-gray-500">One-click setup complete</div>
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedFeature === 2 && (
+                      // Step 3: Technical Setup
+                      <div className="flex flex-col items-center">
+                        <div className="w-32 h-32 bg-[#797BEC] rounded-2xl flex items-center justify-center mb-6 relative">
+                          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-white">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" strokeWidth="2"/>
+                          </svg>
+                          <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center animate-spin">
+                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-3 gap-3 mb-4">
+                          <div className="bg-green-100 border border-green-200 rounded-lg p-2 text-center">
+                            <div className="text-green-600 font-bold text-xs">✓</div>
+                            <div className="text-xs text-green-700">AI Training</div>
+                          </div>
+                          <div className="bg-blue-100 border border-blue-200 rounded-lg p-2 text-center animate-pulse">
+                            <div className="text-blue-600 font-bold text-xs">⚡</div>
+                            <div className="text-xs text-blue-700">Phone Setup</div>
+                          </div>
+                          <div className="bg-gray-100 border border-gray-200 rounded-lg p-2 text-center">
+                            <div className="text-gray-400 font-bold text-xs">○</div>
+                            <div className="text-xs text-gray-500">Calendar Sync</div>
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-sm font-medium text-gray-800">Setting up your AI...</div>
+                          <div className="text-xs text-gray-500">Handles everything automatically</div>
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedFeature === 3 && (
+                      // Step 4: Start Getting Jobs
+                      <div className="flex flex-col items-center">
+                        <div className="w-32 h-32 bg-green-500 rounded-2xl flex items-center justify-center mb-6 relative">
+                          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-white">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="currentColor"/>
+                          </svg>
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-400 rounded-full animate-bounce flex items-center justify-center">
+                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4 w-full">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="text-sm font-medium text-gray-800">Incoming Call</div>
+                            <div className="text-xs text-green-600">AI Answered</div>
+                          </div>
+                          <div className="text-xs text-gray-600 mb-2">"My water heater isn't working..."</div>
+                          <div className="flex items-center justify-between">
+                            <div className="text-xs text-blue-600">→ Appointment Booked</div>
+                            <div className="text-xs text-gray-500">Tomorrow 2PM</div>
+                          </div>
+                        </div>
+                        <div className="flex space-x-2">
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-200"></div>
+                          <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse delay-400"></div>
+                        </div>
+                        <div className="text-center mt-2">
+                          <div className="text-sm font-medium text-green-600">Live & Protected</div>
+                          <div className="text-xs text-gray-500">Never miss another job</div>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="mt-6 flex justify-center">
                       <div className="flex space-x-1">
                         {features.map((_, i) => (
                           <motion.div 
                             key={i} 
                             className="w-2 h-2 rounded-full"
                             animate={{
-                              backgroundColor: i === selectedFeature ? '#797BEC' : 'hsl(var(--muted))'
+                              backgroundColor: i === selectedFeature ? '#1D4ED8' : 'hsl(var(--muted))'
                             }}
                             transition={{ duration: 0.3 }}
                           />
