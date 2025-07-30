@@ -31,7 +31,11 @@ const AiPresenceSection = () => {
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-white">
                           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="currentColor"/>
                         </svg>
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <motion.div 
+                          className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"
+                          animate={{ opacity: [0.4, 1, 0.4] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        />
                       </div>
                     </div>
                     <div className="text-center mb-4">
@@ -39,9 +43,21 @@ const AiPresenceSection = () => {
                       <div className="text-sm text-muted-foreground">Always Available</div>
                     </div>
                     <div className="flex space-x-2">
-                      <div className="w-8 h-2 bg-green-400 rounded animate-pulse"></div>
-                      <div className="w-8 h-2 bg-blue-400 rounded animate-pulse delay-200"></div>
-                      <div className="w-8 h-2 bg-orange-400 rounded animate-pulse delay-400"></div>
+                      <motion.div 
+                        className="w-8 h-2 bg-green-400 rounded"
+                        animate={{ opacity: [0.4, 1, 0.4] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                      <motion.div 
+                        className="w-8 h-2 bg-blue-400 rounded"
+                        animate={{ opacity: [0.4, 1, 0.4] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                      />
+                      <motion.div 
+                        className="w-8 h-2 bg-orange-400 rounded"
+                        animate={{ opacity: [0.4, 1, 0.4] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -153,9 +169,13 @@ const AiPresenceSection = () => {
                           <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
-                      <div className="w-12 h-8 bg-blue-400 rounded flex items-center justify-center animate-pulse">
+                      <motion.div 
+                        className="w-12 h-8 bg-blue-400 rounded flex items-center justify-center"
+                        animate={{ opacity: [0.4, 1, 0.4] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      >
                         <div className="w-2 h-2 bg-white rounded-full"></div>
-                      </div>
+                      </motion.div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-[#797BEC] mb-1">+85%</div>
@@ -191,7 +211,11 @@ const AiPresenceSection = () => {
                         <div className="text-xs text-gray-600">Phone</div>
                       </div>
                       <div className="flex-1 h-1 bg-gradient-to-r from-blue-400 to-orange-400 rounded relative">
-                        <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-orange-400 rounded-full animate-pulse"></div>
+                        <motion.div 
+                          className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-orange-400 rounded-full"
+                          animate={{ opacity: [0.4, 1, 0.4] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        />
                       </div>
                       <div className="text-center">
                         <div className="w-16 h-16 bg-orange-400 rounded-lg flex items-center justify-center mb-2">

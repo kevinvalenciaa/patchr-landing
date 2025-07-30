@@ -1,22 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useMotionValue, useTransform, useScroll } from "framer-motion";
 
 const Navigation = () => {
   const { theme, setTheme } = useTheme();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { scrollY } = useScroll();
+  
+  const navWidth = useTransform(scrollY, [0, 50], ["max-w-6xl", "max-w-4xl"]);
+  const navOpacity = useTransform(scrollY, [0, 50], [0.95, 0.98]);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -40,9 +34,14 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
-      <div className={`mx-auto transition-all duration-300 ease-in-out rounded-2xl bg-background/95 backdrop-blur-md border border-border shadow-lg ${
-        isScrolled ? 'max-w-4xl' : 'max-w-6xl'
-      }`}>
+      <motion.div 
+        className="mx-auto transition-all duration-300 ease-in-out rounded-2xl border border-border shadow-lg"
+        style={{
+          backgroundColor: `hsl(var(--background) / ${navOpacity.get()})`,
+          backdropFilter: "blur(12px)",
+          maxWidth: navWidth.get()
+        }}
+      >
         <div className="flex items-center h-16 px-6">
           <div className="flex items-center">
             <div className="flex items-center space-x-3">
@@ -116,7 +115,7 @@ const Navigation = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 };

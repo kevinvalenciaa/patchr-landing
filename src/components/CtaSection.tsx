@@ -1,48 +1,29 @@
 
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useRef } from "react";
 import { Zap } from "lucide-react";
 
 const CtaSection = () => {
-  const [isHovering, setIsHovering] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  const gradientX = useTransform(mouseX, [0, 1000], [0, 100]);
+  const gradientY = useTransform(mouseY, [0, 600], [0, 100]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      mouseX.set(e.clientX - rect.left);
+      mouseY.set(e.clientY - rect.top);
+    }
+  };
 
   const openTypeform = () => {
     // Open Typeform in a new tab
     window.open('https://form.typeform.com/to/UON7KTNt', '_blank');
-  };
-
-  // Mouse tracking for potential future effects
-  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-  //   const rect = e.currentTarget.getBoundingClientRect();
-  //   setMousePosition({
-  //     x: e.clientX - rect.left,
-  //     y: e.clientY - rect.top,
-  //   });
-  // };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
   };
 
   return (
@@ -92,28 +73,37 @@ const CtaSection = () => {
           {/* Content */}
           <motion.div 
             className="relative z-10 text-center py-16 px-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
+            transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
           >
             <motion.h2 
               className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight"
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
               Ready to stop missing jobs?
             </motion.h2>
             
             <motion.p 
               className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
               Join hundreds of contractors already using patchr. to capture every call and grow their business—without changing how they work.
             </motion.p>
             
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
               {/* <motion.div
                 whileHover={{ scale: 1.02 }}
@@ -156,7 +146,12 @@ const CtaSection = () => {
                   />
                   
                   <div className="relative z-10 flex items-center">
-                    <Zap className="mr-3 h-5 w-5 animate-pulse" />
+                    <motion.div
+                      animate={{ opacity: [0.3, 0.8, 0.3] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <Zap className="mr-3 h-5 w-5" />
+                    </motion.div>
                     Join the Waitlist
                     <motion.div
                       className="ml-2"
