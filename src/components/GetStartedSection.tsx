@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { Sparkles, Grid3x3, Code, Zap, Timer } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useAnimation } from "framer-motion";
 
 const GetStartedSection = () => {
-  const [selectedFeature, setSelectedFeature] = useState(0);
+  const selectedFeatureValue = useMotionValue(0);
+  const progressControls = useAnimation();
   
   const STEP_DURATION = 6000; // 6 seconds per step
 
@@ -34,8 +35,39 @@ const GetStartedSection = () => {
     }
   ];
 
+  // Animation cycle using Framer Motion
+  useEffect(() => {
+    const animateSteps = async () => {
+      while (true) {
+        for (let i = 0; i < features.length; i++) {
+          selectedFeatureValue.set(i);
+          await progressControls.start({
+            width: "100%",
+            transition: { duration: STEP_DURATION / 1000, ease: "linear" }
+          });
+          await progressControls.start({
+            width: "0%",
+            transition: { duration: 0 }
+          });
+        }
+      }
+    };
+    
+    animateSteps();
+  }, [selectedFeatureValue, progressControls, features.length]);
+
   const handleFeatureSelect = (index: number) => {
-    setSelectedFeature(index);
+    selectedFeatureValue.set(index);
+    progressControls.stop();
+    progressControls.start({
+      width: "0%",
+      transition: { duration: 0 }
+    }).then(() => {
+      progressControls.start({
+        width: "100%",
+        transition: { duration: STEP_DURATION / 1000, ease: "linear" }
+      });
+    });
   };
 
   return (
@@ -83,26 +115,23 @@ const GetStartedSection = () => {
               <div className="space-y-6">
                 {features.map((feature, index) => {
                   const IconComponent = feature.icon;
-                  const isSelected = selectedFeature === index;
                   return (
                     <motion.div
                       key={index}
-                      className={`relative flex items-start gap-4 p-4 rounded-lg cursor-pointer ${
-                        isSelected 
-                          ? 'bg-muted/40 border border-muted' 
-                          : 'hover:bg-muted/20'
-                      }`}
+                      className="relative flex items-start gap-4 p-4 rounded-lg cursor-pointer"
                       onClick={() => handleFeatureSelect(index)}
                       initial={{ opacity: 0, x: -30 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       animate={{
-                        backgroundColor: isSelected ? 'hsl(var(--muted) / 0.4)' : 'transparent',
-                        borderColor: isSelected ? 'hsl(var(--muted))' : 'transparent',
+                        backgroundColor: selectedFeatureValue.get() === index ? 'hsl(var(--muted) / 0.4)' : 'transparent',
+                        borderColor: selectedFeatureValue.get() === index ? 'hsl(var(--muted))' : 'transparent',
+                        borderWidth: selectedFeatureValue.get() === index ? 1 : 0,
+                        transition: { duration: 0.3, ease: "easeOut" }
                       }}
                       whileHover={{ 
-                        backgroundColor: isSelected ? 'hsl(var(--muted) / 0.4)' : 'hsl(var(--muted) / 0.2)',
+                        backgroundColor: 'hsl(var(--muted) / 0.2)',
                         transition: { duration: 0.2 }
                       }}
                       whileTap={{ scale: 0.98 }}
@@ -127,20 +156,19 @@ const GetStartedSection = () => {
                       </div>
                       
                       {/* Progress bar for selected step */}
-                      {isSelected && (
-                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-muted/30 rounded-b-lg overflow-hidden">
-                          <motion.div
-                            key={selectedFeature}
-                            className="h-full bg-gradient-to-r from-[#1D4ED8] to-[#1D4ED8] rounded-b-lg"
-                            initial={{ width: "0%" }}
-                            animate={{ width: "100%" }}
-                            transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
-                            onAnimationComplete={() => {
-                              setSelectedFeature((prev) => (prev + 1) % features.length);
-                            }}
-                          />
-                        </div>
-                      )}
+                      <motion.div 
+                        className="absolute bottom-0 left-0 right-0 h-1 bg-muted/30 rounded-b-lg overflow-hidden"
+                        animate={{
+                          opacity: selectedFeatureValue.get() === index ? 1 : 0,
+                          transition: { duration: 0.3 }
+                        }}
+                      >
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-[#1D4ED8] to-[#1D4ED8] rounded-b-lg"
+                          animate={progressControls}
+                          style={{ width: "0%" }}
+                        />
+                      </motion.div>
                     </motion.div>
                   );
                 })}
@@ -152,11 +180,15 @@ const GetStartedSection = () => {
             <AnimatePresence mode="wait">
                 <motion.div
                   className="relative w-full h-full flex items-center justify-center"
-                  key={selectedFeature}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  key={selectedFeatureValue.get()}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ 
+                    duration: 0.4, 
+                    ease: [0.4, 0, 0.2, 1],
+                    type: "tween"
+                  }}
                 >
                   {/* Custom Graphics for each step */}
                   <motion.div 
@@ -165,7 +197,7 @@ const GetStartedSection = () => {
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
                   >
-                    {selectedFeature === 0 && (
+                    {selectedFeatureValue.get() === 0 && (
                       // Step 1: Business Info
                       <div className="flex flex-col items-center">
                         <div className="w-32 h-32 bg-[#1D4ED8] rounded-2xl flex items-center justify-center mb-6 relative">
@@ -195,7 +227,7 @@ const GetStartedSection = () => {
                       </div>
                     )}
 
-                    {selectedFeature === 1 && (
+                    {selectedFeatureValue.get() === 1 && (
                       // Step 2: Calendar Connection
                       <div className="flex flex-col items-center">
                         <div className="flex items-center space-x-6 mb-6">
@@ -226,7 +258,7 @@ const GetStartedSection = () => {
                       </div>
                     )}
 
-                    {selectedFeature === 2 && (
+                    {selectedFeatureValue.get() === 2 && (
                       // Step 3: Technical Setup
                       <div className="flex flex-col items-center">
                         <div className="w-32 h-32 bg-[#797BEC] rounded-2xl flex items-center justify-center mb-6 relative">
@@ -259,7 +291,7 @@ const GetStartedSection = () => {
                       </div>
                     )}
 
-                    {selectedFeature === 3 && (
+                    {selectedFeatureValue.get() === 3 && (
                       // Step 4: Start Getting Jobs
                       <div className="flex flex-col items-center">
                         <div className="w-32 h-32 bg-green-500 rounded-2xl flex items-center justify-center mb-6 relative">
@@ -300,9 +332,14 @@ const GetStartedSection = () => {
                             key={i} 
                             className="w-2 h-2 rounded-full"
                             animate={{
-                              backgroundColor: i === selectedFeature ? '#1D4ED8' : 'hsl(var(--muted))'
+                              backgroundColor: i === selectedFeatureValue.get() ? '#1D4ED8' : 'hsl(var(--muted))',
+                              scale: i === selectedFeatureValue.get() ? 1.2 : 1
                             }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ 
+                              duration: 0.3,
+                              ease: [0.4, 0, 0.2, 1],
+                              type: "tween"
+                            }}
                           />
                         ))}
                       </div>
