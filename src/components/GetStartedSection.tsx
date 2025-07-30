@@ -241,11 +241,7 @@ const GetStartedSection = () => {
                           </div>
                           <div className="flex flex-col items-center">
                             <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-green-400 rounded mb-2">
-                              <motion.div 
-                                className="w-4 h-4 bg-green-400 rounded-full -mt-1.5 ml-12"
-                                animate={{ opacity: [0.4, 1, 0.4] }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                              />
+                              <div className="w-4 h-4 bg-green-400 rounded-full -mt-1.5 ml-12 animate-pulse"></div>
                             </div>
                             <div className="text-xs text-gray-500">Connecting...</div>
                           </div>
@@ -279,14 +275,10 @@ const GetStartedSection = () => {
                             <div className="text-green-600 font-bold text-xs">✓</div>
                             <div className="text-xs text-green-700">AI Training</div>
                           </div>
-                          <motion.div 
-                            className="bg-blue-100 border border-blue-200 rounded-lg p-2 text-center"
-                            animate={{ opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                          >
+                          <div className="bg-blue-100 border border-blue-200 rounded-lg p-2 text-center animate-pulse">
                             <div className="text-blue-600 font-bold text-xs">⚡</div>
                             <div className="text-xs text-blue-700">Phone Setup</div>
-                          </motion.div>
+                          </div>
                           <div className="bg-gray-100 border border-gray-200 rounded-lg p-2 text-center">
                             <div className="text-gray-400 font-bold text-xs">○</div>
                             <div className="text-xs text-gray-500">Calendar Sync</div>
@@ -322,21 +314,9 @@ const GetStartedSection = () => {
                           </div>
                         </div>
                         <div className="flex space-x-2">
-                          <motion.div 
-                            className="w-2 h-2 bg-green-400 rounded-full"
-                            animate={{ opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                          />
-                          <motion.div 
-                            className="w-2 h-2 bg-blue-400 rounded-full"
-                            animate={{ opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                          />
-                          <motion.div 
-                            className="w-2 h-2 bg-orange-400 rounded-full"
-                            animate={{ opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                          />
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-200"></div>
+                          <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse delay-400"></div>
                         </div>
                         <div className="text-center mt-2">
                           <div className="text-sm font-medium text-green-600">Live & Protected</div>

@@ -1,18 +1,17 @@
-import { motion, useMotionValue, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const ExpandableFeatureList = () => {
-  const openItemValue = useMotionValue<string | null>(null);
+  const [openItem, setOpenItem] = useState<string | null>(null);
 
   const toggleItem = (itemId: string) => {
-    const currentValue = openItemValue.get();
-    openItemValue.set(currentValue === itemId ? null : itemId);
+    setOpenItem(prev => prev === itemId ? null : itemId);
   };
 
   const features = [
     {
       id: "expert-knowledge",
-      title: "Expert Local Knowledge", 
+      title: "Expert Local Knowledge",
       description: "",
       expandedContent: "We provide detailed market analysis, neighborhood insights, and pricing strategies tailored to your specific location and property type."
     },
@@ -23,61 +22,37 @@ const ExpandableFeatureList = () => {
       expandedContent: "We handle all the paperwork, coordinate with lenders, inspectors, and other parties involved in your transaction to ensure a smooth process from start to finish."
     },
     {
-      id: "comprehensive-support", 
+      id: "comprehensive-support",
       title: "Comprehensive Support",
       description: "",
       expandedContent: "Our support extends beyond the transaction with ongoing assistance, market updates, and guidance for future real estate needs and investment opportunities."
     }
   ];
 
-  return <motion.div className="flex flex-col gap-3">
-      {features.map((feature, index) => <motion.div 
-        key={feature.id}
-        layout
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
-      >
-          <motion.div className="border border-border rounded-lg overflow-hidden">
-            <motion.button
-              className="w-full p-6 text-left flex items-center justify-between bg-background hover:bg-muted/50 transition-colors"
-              onClick={() => toggleItem(feature.id)}
-              whileHover={{ backgroundColor: "hsl(var(--muted) / 0.5)" }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="flex items-center space-x-4">
-                <span className="font-semibold text-foreground">{feature.title}</span>
-              </div>
-              <motion.div
-                animate={{ 
-                  rotate: openItemValue.get() === feature.id ? 180 : 0 
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronDown size={20} className="text-muted-foreground" />
-              </motion.div>
-            </motion.button>
-            
-            <AnimatePresence>
-              {openItemValue.get() === feature.id && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="p-6 pt-0 text-muted-foreground border-t border-border">
-                    {feature.expandedContent}
+  return <div className="flex flex-col gap-3">
+      {features.map((feature, index) => <div key={feature.id}>
+          <Collapsible open={openItem === feature.id} onOpenChange={() => toggleItem(feature.id)}>
+            <CollapsibleTrigger className="w-full">
+              <div className="flex items-center justify-between gap-3 cursor-pointer">
+                <div className="text-left flex-1">
+                  <div className="text-foreground text-xl font-medium leading-[26px]">
+                    {feature.title}
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+                  {feature.description}
+                </div>
+              </div>
+            </CollapsibleTrigger>
+            
+            <CollapsibleContent className="mt-2">
+              <div className="text-muted-foreground text-sm font-normal leading-[18.2px]">
+                {feature.expandedContent}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
           
           {index < features.length - 1 && <div className="h-px bg-border opacity-20 my-3" />}
-        </motion.div>)}
-    </motion.div>;
+        </div>)}
+    </div>;
 };
 
 export default ExpandableFeatureList;

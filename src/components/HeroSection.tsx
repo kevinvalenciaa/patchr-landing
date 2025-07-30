@@ -82,12 +82,7 @@ const HeroSection = () => {
                 />
                 
                 <div className="relative z-10 flex items-center">
-                  <motion.div
-                    animate={{ opacity: [0.3, 0.8, 0.3] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <Zap className="mr-3 h-5 w-5" />
-                  </motion.div>
+                  <Zap className="mr-3 h-5 w-5 animate-pulse" />
                   Join the Waitlist
                   <motion.div
                     className="ml-2"
